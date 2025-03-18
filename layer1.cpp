@@ -17,7 +17,10 @@ public:
         connected_devices.erase(remove(connected_devices.begin(), connected_devices.end(), device_id), connected_devices.end());
     }
 
-};
 
+};
+void send_data_to_hub(int device_id, int hub_id){
+    printf("Device %d sending data to hub %d\n", device_id, hub_id);
+}
 
 
