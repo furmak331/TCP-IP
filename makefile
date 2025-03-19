@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++14 -Wall
+CXXFLAGS = -std=c++17 -Wall
 
 SRCS = Device.cpp Connection.cpp EndDevice.cpp Hub.cpp Network.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
