@@ -1,6 +1,0 @@
-=== Message Log for Computer2 ===
-Started on: 2025-03-19 06:14:41
-===============================
-
-[2025-03-19 06:14:41] From Computer1 (port 0): Hello from Computer1 to Computer2!
-[2025-03-19 06:14:41] From Computer1 (port 0): How are you doing today?

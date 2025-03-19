@@ -5,12 +5,14 @@
 #include <filesystem>
 
 // Helper function to get current timestamp as string (if not already defined)
-string getCurrentTimestamp() {
-    time_t now = time(0);
-    tm* localTime = localtime(&now);
-    char buffer[80];
-    strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", localTime);
-    return string(buffer);
+namespace {
+    string getCurrentTimestamp() {
+        time_t now = time(0);
+        tm* localTime = localtime(&now);
+        char buffer[80];
+        strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", localTime);
+        return string(buffer);
+    }
 }
 
 // Constructor
