@@ -6,7 +6,7 @@ Device::Device(const string& deviceName) {
 }
 
 // Returns the device's name
-string Device::getName() {
+string Device::getName() const {
     return name;
 }
 

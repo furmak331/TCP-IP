@@ -20,12 +20,12 @@ public:
     Device(const string& deviceName);
     
     // Get the name of this device
-    string getName();
+    string getName() const;
     
     // Add a connection to this device
     void addConnection(Connection* connection);
     
     // Methods that must be implemented by derived classes
-    virtual void receiveData(const string& data, int incomingPort) = 0;
+    virtual void receiveData(const string& data, int incomingPort, const string& senderName = "") = 0;
     virtual void sendData(const string& data) = 0;
 };

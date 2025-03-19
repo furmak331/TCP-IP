@@ -1,11 +1,12 @@
 #include "Network.h"
+#include <iostream>
 
 int main() {
     // Create a new network
     Network network;
     
-    // ------ TEST CASE 1: Direct Connection ------
-    cout << "\n===== TEST CASE 1: DIRECT CONNECTION =====" << endl;
+    // ------ TEST CASE 1: Direct Connection with File Storage ------
+    cout << "\n===== TEST CASE 1: DIRECT CONNECTION WITH FILE STORAGE =====" << endl;
     
     // Create two end devices
     EndDevice* computer1 = network.createEndDevice("Computer1");
@@ -17,15 +18,19 @@ int main() {
     // Show the network
     network.displayTopology();
     
-    // Send a test message
+    // Send test messages
     computer1->sendData("Hello from Computer1 to Computer2!");
+    computer2->sendData("Hello back from Computer2!");
+    computer1->sendData("How are you doing today?");
     
     // Show received messages
+    computer1->showMessageHistory();
     computer2->showMessageHistory();
     
+    cout << "\nMessages have been saved to Computer1_messages.txt and Computer2_messages.txt" << endl;
     
-    // ------ TEST CASE 2: Hub Connection ------
-    cout << "\n===== TEST CASE 2: HUB CONNECTION =====" << endl;
+    // ------ TEST CASE 2: Hub Connection with File Storage ------
+    cout << "\n===== TEST CASE 2: HUB CONNECTION WITH FILE STORAGE =====" << endl;
     
     // Create a hub
     Hub* mainHub = network.createHub("MainHub");
@@ -43,13 +48,18 @@ int main() {
     // Show the network
     network.displayTopology();
     
-    // Send a test message
-    cout << "\nSending test message through hub..." << endl;
+    // Send test messages
+    cout << "\nSending test messages through hub..." << endl;
     pc1->sendData("Hello from PC1 to everyone!");
+    pc2->sendData("PC2 responding to the group.");
+    pc3->sendData("PC3 joining the conversation.");
     
     // Show received messages
+    pc1->showMessageHistory();
     pc2->showMessageHistory();
     pc3->showMessageHistory();
+    
+    cout << "\nMessages have been saved to PC1_messages.txt, PC2_messages.txt, and PC3_messages.txt" << endl;
     
     return 0;
 }

@@ -1,0 +1,6 @@
+=== Message Log for PC3 ===
+Started on: 2025-03-19 06:14:41
+===============================
+
+[2025-03-19 06:14:41] From PC1 (port 0): Hello from PC1 to everyone!
+[2025-03-19 06:14:41] From PC2 (port 0): PC2 responding to the group.

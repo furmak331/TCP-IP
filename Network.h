@@ -3,6 +3,7 @@
 #include "EndDevice.h"
 #include "Hub.h"
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -32,6 +33,15 @@ public:
     // Connect an end device to a hub
     void connectToHub(Hub* hub, EndDevice* device);
     
-    // Display the network topology
-    void displayTopology();
+    // Write network topology to a file
+    void saveTopologyToFile(const string& filename = "topology.txt");
+    
+    // Simple test for the network
+    void runSimpleTest();
+    
+    // Run a stress test with many devices
+    void runStressTest(int numDevices, int numMessages);
+    
+    // Get all devices
+    const vector<Device*>& getDevices() const;
 };
