@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++17 -Wall
 
 SRCS = Device.cpp Connection.cpp EndDevice.cpp Hub.cpp Network.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
-TARGET = network_simulator
+TARGET = tcp_ip
 
 all: $(TARGET)
 
