@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
 
-SRCS = Device.cpp Connection.cpp EndDevice.cpp Hub.cpp Network.cpp main.cpp
+SRCS = Device.cpp Connection.cpp EndDevice.cpp Hub.cpp Bus.cpp Network.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 TARGET = tcp_ip
 
