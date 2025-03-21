@@ -2,6 +2,7 @@
 
 #include "EndDevice.h"
 #include "Hub.h"
+#include "Bus.h"
 #include <vector>
 #include <string>
 
@@ -27,11 +28,17 @@ public:
     // Create a new hub
     Hub* createHub(const string& name = "");
     
+    // Create a new bus
+    Bus* createBus(const string& name = "");
+    
     // Create a direct connection between two end devices
     void connectDevices(EndDevice* dev1, EndDevice* dev2);
     
     // Connect an end device to a hub
     void connectToHub(Hub* hub, EndDevice* device);
+    
+    // Connect a device to a bus
+    void connectToBus(Bus* bus, Device* device);
     
     // Write network topology to a file
     void saveTopologyToFile(const string& filename = "topology.txt");

@@ -17,12 +17,13 @@ void runCustomNetwork() {
     string input;
     int deviceCount = 0;
     int hubCount = 0;
+    int busCount = 0;
     
     cout << "\n=== Custom Network Creation ===" << endl;
     
     // First, create devices
     while (true) {
-        cout << "\nCreate a new device? (pc/hub/done): ";
+        cout << "\nCreate a new device? (pc/hub/bus/done): ";
         cin >> input;
         
         if (input == "done") {
@@ -45,6 +46,15 @@ void runCustomNetwork() {
             network.createHub(name);
             hubCount++;
             cout << "Hub created. Total hubs: " << hubCount << endl;
+        } else if (input == "bus") {
+            string name;
+            cout << "Enter bus name (or leave empty for auto-name): ";
+            cin.ignore();
+            getline(cin, name);
+            
+            network.createBus(name);
+            busCount++;
+            cout << "Bus created. Total buses: " << busCount << endl;
         } else {
             cout << "Invalid option. Try again." << endl;
         }
@@ -59,6 +69,8 @@ void runCustomNetwork() {
         cout << i << ". " << devices[i]->getName();
         if (dynamic_cast<Hub*>(devices[i])) {
             cout << " (Hub)";
+        } else if (dynamic_cast<Bus*>(devices[i])) {
+            cout << " (Bus)";
         }
         cout << endl;
     }
@@ -85,18 +97,26 @@ void runCustomNetwork() {
             
             // Check device types
             Hub* hub = dynamic_cast<Hub*>(devices[device1]);
+            Bus* bus = dynamic_cast<Bus*>(devices[device1]);
             EndDevice* endDevice = dynamic_cast<EndDevice*>(devices[device2]);
             
             if (hub && endDevice) {
                 network.connectToHub(hub, endDevice);
                 cout << "Connected " << endDevice->getName() << " to " << hub->getName() << endl;
+            } else if (bus && endDevice) {
+                network.connectToBus(bus, endDevice);
+                cout << "Connected " << endDevice->getName() << " to " << bus->getName() << endl;
             } else {
                 hub = dynamic_cast<Hub*>(devices[device2]);
+                bus = dynamic_cast<Bus*>(devices[device2]);
                 endDevice = dynamic_cast<EndDevice*>(devices[device1]);
                 
                 if (hub && endDevice) {
                     network.connectToHub(hub, endDevice);
                     cout << "Connected " << endDevice->getName() << " to " << hub->getName() << endl;
+                } else if (bus && endDevice) {
+                    network.connectToBus(bus, endDevice);
+                    cout << "Connected " << endDevice->getName() << " to " << bus->getName() << endl;
                 } else {
                     // Try to connect two end devices
                     EndDevice* end1 = dynamic_cast<EndDevice*>(devices[device1]);

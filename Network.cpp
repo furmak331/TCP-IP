@@ -4,6 +4,7 @@
 #include <fstream>
 #include <random>
 #include <chrono>
+#include "Bus.h"
 
 // Constructor
 Network::Network() {
@@ -61,6 +62,25 @@ Hub* Network::createHub(const string& name) {
     return hub;
 }
 
+// Create a new bus
+Bus* Network::createBus(const string& name) {
+    // Generate a name if none provided
+    string busName;
+    if (name.empty()) {
+        busName = "Bus" + to_string(nextId++);
+    } else {
+        busName = name;
+    }
+    
+    // Create the bus
+    Bus* bus = new Bus(busName);
+    
+    // Add to the network
+    devices.push_back(bus);
+    
+    return bus;
+}
+
 // Connect two end devices directly
 void Network::connectDevices(EndDevice* dev1, EndDevice* dev2) {
     // Create a new connection
@@ -78,6 +98,12 @@ void Network::connectDevices(EndDevice* dev1, EndDevice* dev2) {
 void Network::connectToHub(Hub* hub, EndDevice* device) {
     // Let the hub create the connection
     hub->connectDevice(device);
+}
+
+// Connect a device to a bus
+void Network::connectToBus(Bus* bus, Device* device) {
+    // Let the bus create the connection
+    bus->connectDevice(device);
 }
 
 // Save network topology to a file
