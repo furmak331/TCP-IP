@@ -6,9 +6,8 @@ void printHelp() {
     cout << "\nTCP/IP Network Simulator Commands:" << endl;
     cout << "-----------------------------" << endl;
     cout << "1. Run simple test" << endl;
-    cout << "2. Run stress test" << endl;
-    cout << "3. Create custom network" << endl;
-    cout << "4. Exit" << endl;
+    cout << "2. Create custom network" << endl;  
+    cout << "3. Exit" << endl;                 
     cout << "Enter your choice: ";
 }
 
@@ -172,22 +171,10 @@ int main() {
                 network.runSimpleTest();
                 break;
             }
-            case 2: {
-                Network network;
-                int numDevices, numMessages;
-                
-                cout << "Enter number of devices: ";
-                cin >> numDevices;
-                cout << "Enter number of messages: ";
-                cin >> numMessages;
-                
-                network.runStressTest(numDevices, numMessages);
-                break;
-            }
-            case 3:
+            case 2:
                 runCustomNetwork();
                 break;
-            case 4:
+            case 3:
                 cout << "Exiting simulator. Goodbye!" << endl;
                 return 0;
             default:

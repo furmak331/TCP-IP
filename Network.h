@@ -39,9 +39,6 @@ public:
     // Simple test for the network
     void runSimpleTest();
     
-    // Run a stress test with many devices
-    void runStressTest(int numDevices, int numMessages);
-    
     // Get all devices
     const vector<Device*>& getDevices() const;
 };

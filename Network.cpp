@@ -141,61 +141,6 @@ void Network::runSimpleTest() {
     cout << "Test complete. Check the log files in the 'logs' directory." << endl;
 }
 
-// Run a stress test with many devices and messages
-void Network::runStressTest(int numDevices, int numMessages) {
-    cout << "Running stress test with " << numDevices << " devices and " 
-         << numMessages << " messages..." << endl;
-    
-    // Create a hub
-    Hub* mainHub = createHub("MainHub");
-    
-    // Create devices
-    vector<EndDevice*> endDevices;
-    for (int i = 1; i <= numDevices; i++) {
-        EndDevice* device = createEndDevice("Device" + to_string(i));
-        connectToHub(mainHub, device);
-        endDevices.push_back(device);
-    }
-    
-    // Set up random generator
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> deviceDist(0, numDevices - 1);
-    
-    // Start timing
-    auto startTime = chrono::high_resolution_clock::now();
-    
-    // Send random messages
-    for (int i = 1; i <= numMessages; i++) {
-        int senderIndex = deviceDist(gen);
-        EndDevice* sender = endDevices[senderIndex];
-        
-        string message = "Test message " + to_string(i) + " from " + sender->getName();
-        sender->sendData(message);
-    }
-    
-    // End timing
-    auto endTime = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::milliseconds>(endTime - startTime).count();
-    
-    // Save network info
-    saveTopologyToFile("stress_test_topology.txt");
-    
-    // Write performance results
-    ofstream resultFile("stress_test_results.txt");
-    if (resultFile.is_open()) {
-        resultFile << "STRESS TEST RESULTS" << endl;
-        resultFile << "===================" << endl;
-        resultFile << "Devices: " << numDevices << endl;
-        resultFile << "Messages: " << numMessages << endl;
-        resultFile << "Time taken: " << duration << " ms" << endl;
-        resultFile << "Messages per second: " << (numMessages * 1000.0 / duration) << endl;
-        resultFile.close();
-    }
-    
-    cout << "Stress test complete in " << duration << " ms." << endl;
-    cout << "Check the log files in the 'logs' directory." << endl;
-}
 
 // Get all devices
 const vector<Device*>& Network::getDevices() const {
