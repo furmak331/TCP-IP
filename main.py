@@ -23,9 +23,12 @@ logging.basicConfig(level=logging.INFO,
 MAX_FRAME_SIZE = 1024  # Maximum size of a frame in bytes
 TRANSMISSION_DELAY = 0.01  # Simulated delay for transmission in seconds
 BIT_ERROR_RATE = 0.01  # Probability of bit error in transmission
-CSMA_CD_MAX_ATTEMPTS = 10  # Maximum attempts for CSMA/CD
-TOKEN_HOLD_TIME = 0.05  # Maximum time a device can hold the token in seconds
+CSMA_CD_MAX_ATTEMPTS = 16  # Maximum attempts before giving up
+CSMA_CD_SLOT_TIME = 0.02  # Time slot for backoff in seconds
+MEDIUM_BUSY_PROBABILITY = 0.3  # Probability that medium is initially busy
+MEDIUM_BUSY_DURATION = 0.1  # How long the medium stays busy in seconds
 ERROR_INJECTION_RATE = 0.2  # 20% chance of introducing an error in a frame
+BUSY_TIME_RANGE = (0.05, 0.2)  # Range of time (in seconds) that the medium stays busy
 
 class MACAddress:
     """Represents a MAC address for network devices"""
@@ -56,7 +59,6 @@ class FrameType(Enum):
     DATA = 1
     ACK = 2
     NAK = 3
-    TOKEN = 4
 
 
 class Frame:
@@ -147,10 +149,6 @@ class Device:
         self.timeout = 1.0  # Timeout in seconds for retransmission
         self.unacknowledged_frames = {}  # sequence_number -> (frame, timestamp)
         self.buffer = []  # Buffer for received out-of-order frames
-        
-        # Token Ring properties
-        self.has_token = False
-        self.token_ring_next = None
     
     def _setup_logger(self):
         """Setup a logger for this device"""
@@ -177,11 +175,6 @@ class Device:
             self.logger.error(f"Cannot send message: No connections available")
             return False
         
-        # For Token Ring, check if we have the token
-        if hasattr(self, 'token_ring_enabled') and self.token_ring_enabled and not self.has_token:
-            self.logger.warning(f"Cannot send message: Don't have the token")
-            return False
-        
         self.logger.info(f"Sending message: {message}")
         
         # Create frames from the message
@@ -192,10 +185,6 @@ class Device:
             success = self._send_go_back_n(frames)
         else:
             success = self._send_stop_and_wait(frames)
-        
-        # If using Token Ring, release the token after sending
-        if hasattr(self, 'token_ring_enabled') and self.token_ring_enabled and self.has_token:
-            self._release_token()
         
         return success
     
@@ -474,13 +463,6 @@ class Device:
                             link.transmit(retransmit_frame, self)
                         # Update timestamp
                         self.unacknowledged_frames[frame.sequence_number] = (retransmit_frame, time.time())
-                
-                elif frame.frame_type == FrameType.TOKEN:
-                    # Process token frame
-                    self.logger.info(f"Received token")
-                    self.has_token = True
-                    # Schedule token release after TOKEN_HOLD_TIME
-                    threading.Timer(TOKEN_HOLD_TIME, self._release_token).start()
             
             else:
                 # Frame is corrupted - detected by checksum
@@ -518,29 +500,6 @@ class Device:
             self.logger.info(f"Processing buffered frame {frame.sequence_number}")
             self.received_messages.append((frame.data, str(frame.source_mac)))
             self.expected_sequence_number += 1
-    
-    def _release_token(self):
-        """Release the token to the next device in the token ring"""
-        if hasattr(self, 'token_ring_enabled') and self.token_ring_enabled and self.has_token:
-            self.logger.info(f"Releasing token")
-            self.has_token = False
-            
-            if self.token_ring_next:
-                # Create a token frame
-                token_frame = Frame(
-                    str(self.mac_address),
-                    str(self.token_ring_next.mac_address),
-                    "TOKEN",
-                    0,
-                    FrameType.TOKEN
-                )
-                
-                # Find the link to the next device
-                for link in self.connections:
-                    if self.token_ring_next in [link.endpoint1, link.endpoint2]:
-                        self.logger.info(f"Passing token to {self.token_ring_next.name}")
-                        link.transmit(token_frame, self)
-                        break
     
     def __str__(self):
         return f"Device({self.name}, MAC={self.mac_address})"
@@ -731,11 +690,75 @@ class Link:
         file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
         self.logger.addHandler(file_handler)
         
-        # Connect endpoints if provided
+        # CSMA/CD properties
+        self.medium_busy = False
+        self.busy_until = 0  # Time when medium will become free
+        self.collision_detected = False
+        self.transmitting_devices = set()  # Track devices currently transmitting
+        self.transmission_lock = threading.Lock()  # Lock for synchronizing access to medium
+        
+        # Randomly make the medium busy initially (only 10% chance)
+        if random.random() < 0.1:
+            busy_duration = random.uniform(0.05, 0.15)
+            self.medium_busy = True
+            self.busy_until = time.time() + busy_duration
+            self.logger.info(f"Medium initially busy for {busy_duration:.3f} seconds")
+        
         if endpoint1:
             endpoint1.connect(self)
         if endpoint2:
             endpoint2.connect(self)
+    
+    def is_medium_busy(self):
+        """Check if the medium is busy (carrier sense)"""
+        with self.transmission_lock:
+            current_time = time.time()
+            # Check if the busy time has expired
+            if self.medium_busy and current_time > self.busy_until:
+                self.medium_busy = False
+                self.logger.info(f"Medium is now free (busy time expired)")
+            return self.medium_busy
+    
+    def start_transmission(self, device):
+        """Start transmission from a device (returns True if successful, False if collision)"""
+        with self.transmission_lock:
+            # Check if medium is busy (carrier sense)
+            if self.is_medium_busy():
+                busy_for = max(0, self.busy_until - time.time())
+                self.logger.info(f"{device.name} sensed medium busy, will be busy for {busy_for:.3f} more seconds")
+                return False
+            
+            # Medium is free, start transmitting
+            # Set medium busy for a short duration (just for this transmission)
+            transmission_duration = random.uniform(0.02, 0.05)  # Shorter duration to avoid getting stuck
+            self.medium_busy = True
+            self.busy_until = time.time() + transmission_duration
+            self.transmitting_devices.add(device)
+            self.logger.info(f"{device.name} started transmission, medium is busy for {transmission_duration:.3f} seconds")
+            
+            # Check for collision (if another device is already transmitting)
+            if len(self.transmitting_devices) > 1:
+                self.collision_detected = True
+                self.logger.warning(f"Collision detected! {len(self.transmitting_devices)} devices transmitting")
+                return False
+            
+            return True
+    
+    def end_transmission(self, device):
+        """End transmission from a device"""
+        with self.transmission_lock:
+            if device in self.transmitting_devices:
+                self.transmitting_devices.remove(device)
+                self.logger.info(f"{device.name} ended transmission")
+            
+            # Reset collision flag if no devices are transmitting
+            if len(self.transmitting_devices) == 0:
+                self.collision_detected = False
+                
+                # Set a very short cooldown period
+                cooldown = 0.005  # Very short cooldown to avoid getting stuck
+                self.busy_until = time.time() + cooldown
+                self.logger.info(f"Medium will be free in {cooldown:.3f} seconds")
     
     def connect_endpoint(self, endpoint, position=None):
         """Connect an endpoint (device or hub) to this link."""
@@ -762,22 +785,17 @@ class Link:
             self.logger.info(f"Disconnected {endpoint.name} from endpoint2")
     
     def transmit(self, frame, source):
-        """Transmit a frame from source to the other endpoint with possible error injection."""
+        """Transmit a frame from source to the other endpoint with CSMA/CD."""
         if source not in [self.endpoint1, self.endpoint2]:
             self.logger.error(f"Error: Source {source.name} not connected to this link")
-            return
+            return False
         
         # Determine the destination
         destination = self.endpoint2 if source == self.endpoint1 else self.endpoint1
         
         if destination is None:
             self.logger.error(f"Error: No destination connected")
-            return
-        
-        self.logger.info(f"Transmitting frame")
-        
-        # Simulate transmission delay
-        time.sleep(TRANSMISSION_DELAY)
+            return False
         
         # Create a copy of the frame to avoid modifying the original
         transmitted_frame = Frame(
@@ -788,24 +806,61 @@ class Link:
             frame.frame_type
         )
         
-        # Simulate possibility of corruption during transmission
-        if random.random() < ERROR_INJECTION_RATE and frame.frame_type == FrameType.DATA:
-            # Introduce error and log it from the link's perspective
-            bit_pos = random.randint(0, 7)
-            char_pos = random.randint(0, len(transmitted_frame.data) - 1) if len(transmitted_frame.data) > 0 else 0
-            
-            if len(transmitted_frame.data) > 0:
-                char_list = list(transmitted_frame.data)
-                char_code = ord(char_list[char_pos])
-                char_code ^= (1 << bit_pos)  # Flip the bit
-                char_list[char_pos] = chr(char_code)
-                transmitted_frame.data = ''.join(char_list)
-                # Don't update checksum to simulate error
-            
-          #  self.logger.warning(f"Frame {transmitted_frame.sequence_number} corrupted during transmission (bit {bit_pos} flipped at position {char_pos})")
+        # Simplified CSMA/CD implementation to avoid getting stuck
+        attempts = 0
+        max_attempts = 5  # Reduced to avoid long waits
         
-        # Deliver the frame to the destination
-        destination.receive_message(transmitted_frame, source)
+        while attempts < max_attempts:
+            # Randomly make the medium busy to demonstrate CSMA/CD (only 20% chance)
+            if random.random() < 0.2:
+                self.logger.info(f"Medium is busy when {source.name} tries to send frame {frame.sequence_number}")
+                # Wait a short time and try again
+                time.sleep(0.05)
+                attempts += 1
+                continue
+            
+            # Medium is free, proceed with transmission
+            self.logger.info(f"{source.name} transmitting frame {frame.sequence_number} to {destination.name}")
+            
+            # Simulate transmission delay
+            time.sleep(0.02)
+            
+            # Small chance of collision (10%)
+            if random.random() < 0.1:
+                self.logger.warning(f"Collision detected during {source.name}'s transmission of frame {frame.sequence_number}")
+                # Apply backoff
+                backoff_time = random.uniform(0.01, 0.05) * (attempts + 1)
+                self.logger.info(f"{source.name} backing off for {backoff_time:.3f}s after collision")
+                time.sleep(backoff_time)
+                attempts += 1
+                continue
+            
+            # Small chance of corruption (based on ERROR_INJECTION_RATE)
+            if random.random() < ERROR_INJECTION_RATE and frame.frame_type == FrameType.DATA:
+                self.logger.warning(f"Error introduced in frame {frame.sequence_number}")
+                # Introduce error
+                transmitted_frame.introduce_error()
+            
+            # Successful transmission
+            self.logger.info(f"Frame {frame.sequence_number} successfully transmitted from {source.name} to {destination.name}")
+            
+            # Deliver the frame to the destination
+            destination.receive_message(transmitted_frame, source)
+            return True
+        
+        # Max attempts reached
+        self.logger.error(f"{source.name} exceeded maximum transmission attempts ({max_attempts}) for frame {frame.sequence_number}")
+        return False
+    
+    def detect_collision(self, device):
+        """Check if a collision has occurred during transmission"""
+        with self.transmission_lock:
+            # A collision occurs if more than one device is transmitting
+            collision = len(self.transmitting_devices) > 1
+            if collision and not self.collision_detected:
+                self.collision_detected = True
+                self.logger.warning(f"Collision detected during {device.name}'s transmission!")
+            return collision
     
     def __str__(self):
         endpoint1_name = self.endpoint1.name if self.endpoint1 else "None"
@@ -827,10 +882,6 @@ class Network:
         file_handler = logging.FileHandler(f"logs/network_{name}.log")
         file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
         self.logger.addHandler(file_handler)
-        
-        # Token Ring properties
-        self.token_ring_enabled = False
-        self.token_ring_devices = []
     
     def add_device(self, name):
         """Add a new device to the network."""
@@ -920,10 +971,6 @@ class Network:
         for link in device.connections.copy():
             link.disconnect_endpoint(device)
         
-        # Remove from token ring if enabled
-        if self.token_ring_enabled and device in self.token_ring_devices:
-            self.remove_from_token_ring(device)
-        
         del self.devices[name]
         self.logger.info(f"Removed device: {name}")
         return True
@@ -939,10 +986,6 @@ class Network:
         # Disconnect from all links
         for link in hub.connections.copy():
             link.disconnect_endpoint(hub)
-        
-        # Remove from token ring if enabled
-        if self.token_ring_enabled and hub in self.token_ring_devices:
-            self.remove_from_token_ring(hub)
         
         del self.hubs[name]
         self.logger.info(f"Removed hub: {name}")
@@ -1026,135 +1069,6 @@ class Network:
         
         return source.send_message(message, target_mac)
     
-    def setup_token_ring(self, device_names):
-        """Set up a token ring network with the specified devices."""
-        devices = []
-        
-        # Validate all device names
-        for name in device_names:
-            device = (self.devices.get(name) or 
-                      self.hubs.get(name) or 
-                      self.bridges.get(name) or 
-                      self.switches.get(name))
-            
-            if not device:
-                self.logger.error(f"Device '{name}' not found")
-                return False
-            
-            devices.append(device)
-        
-        if len(devices) < 2:
-            self.logger.error("Token ring requires at least 2 devices")
-            return False
-        
-        # Set up the token ring
-        self.token_ring_enabled = True
-        self.token_ring_devices = devices
-        
-        # Set up the ring topology
-        for i in range(len(devices)):
-            devices[i].token_ring_enabled = True
-            devices[i].token_ring_next = devices[(i + 1) % len(devices)]
-        
-        # Give the token to the first device
-        devices[0].has_token = True
-        self.logger.info(f"Token ring set up with {len(devices)} devices, token given to {devices[0].name}")
-        
-        return True
-    
-    def remove_from_token_ring(self, device):
-        """Remove a device from the token ring."""
-        if not self.token_ring_enabled or device not in self.token_ring_devices:
-            return
-        
-        # Find the device's position in the ring
-        index = self.token_ring_devices.index(device)
-        prev_index = (index - 1) % len(self.token_ring_devices)
-        
-        # Update the previous device's next pointer
-        self.token_ring_devices[prev_index].token_ring_next = device.token_ring_next
-        
-        # If this device has the token, pass it to the next device
-        if device.has_token:
-            device.has_token = False
-            next_device = device.token_ring_next
-            if next_device:
-                next_device.has_token = True
-                self.logger.info(f"Token passed from {device.name} to {next_device.name}")
-        
-        # Remove the device from the ring
-        self.token_ring_devices.remove(device)
-        device.token_ring_enabled = False
-        device.token_ring_next = None
-        
-        self.logger.info(f"Removed {device.name} from token ring")
-        
-        # If only one device left, disable token ring
-        if len(self.token_ring_devices) < 2:
-            self.disable_token_ring()
-    
-    def disable_token_ring(self):
-        """Disable the token ring."""
-        if not self.token_ring_enabled:
-            return
-        
-        for device in self.token_ring_devices:
-            device.token_ring_enabled = False
-            device.token_ring_next = None
-            device.has_token = False
-        
-        self.token_ring_enabled = False
-        self.token_ring_devices = []
-        self.logger.info("Token ring disabled")
-    
-    def enable_go_back_n(self, device_name, window_size=4):
-        """Enable Go-Back-N protocol for a device."""
-        device = (self.devices.get(device_name) or 
-                  self.hubs.get(device_name) or 
-                  self.bridges.get(device_name) or 
-                  self.switches.get(device_name))
-        
-        if not device:
-            self.logger.error(f"Device '{device_name}' not found")
-            return False
-        
-        device.use_go_back_n = True
-        device.window_size = window_size
-        self.logger.info(f"Enabled Go-Back-N protocol for {device_name} with window size {window_size}")
-        return True
-    
-    def disable_go_back_n(self, device_name):
-        """Disable Go-Back-N protocol for a device."""
-        device = (self.devices.get(device_name) or 
-                  self.hubs.get(device_name) or 
-                  self.bridges.get(device_name) or 
-                  self.switches.get(device_name))
-        
-        if not device:
-            self.logger.error(f"Device '{device_name}' not found")
-            return False
-        
-        device.use_go_back_n = False
-        self.logger.info(f"Disabled Go-Back-N protocol for {device_name}")
-        return True
-    
-    def create_vlan(self, switch_name, vlan_id, port_indices):
-        """Create a VLAN on a switch."""
-        switch = self.switches.get(switch_name)
-        
-        if not switch:
-            self.logger.error(f"Switch '{switch_name}' not found")
-            return False
-        
-        # Validate port indices
-        for port in port_indices:
-            if port < 0 or port >= len(switch.connections):
-                self.logger.error(f"Invalid port index {port} for switch {switch_name}")
-                return False
-        
-        switch.create_vlan(vlan_id, port_indices)
-        return True
-    
     def display_network(self):
         """Display the current network topology."""
         print(f"\n=== Network: {self.name} ===")
@@ -1192,16 +1106,6 @@ class Network:
             endpoint1_name = link.endpoint1.name if link.endpoint1 else "None"
             endpoint2_name = link.endpoint2.name if link.endpoint2 else "None"
             print(f"  {name}: {endpoint1_name} <-> {endpoint2_name}")
-        
-        if self.token_ring_enabled:
-            print("\nToken Ring:")
-            ring_str = " -> ".join([device.name for device in self.token_ring_devices])
-            ring_str += f" -> {self.token_ring_devices[0].name}"
-            print(f"  {ring_str}")
-            for device in self.token_ring_devices:
-                if device.has_token:
-                    print(f"  Token is currently held by: {device.name}")
-                    break
         
         print("\n")
     
@@ -1243,13 +1147,9 @@ def interactive_cli():
             print("  connect <link> <endpoint>   - Connect an endpoint to a link")
             print("  disconnect <link> <endpoint> - Disconnect an endpoint from a link")
             print("  send <source> <message> [target] - Send a message")
-            print("  setup tokenring <dev1> <dev2> ... - Set up a token ring")
-            print("  disable tokenring           - Disable token ring")
-            print("  enable gbn <device> [window_size] - Enable Go-Back-N protocol")
-            print("  disable gbn <device>        - Disable Go-Back-N protocol")
-            print("  create vlan <switch> <vlan_id> <port1> <port2> ... - Create a VLAN")
             print("  display                     - Display network topology")
             print("  demo error                   - Demonstrate error control")
+            print("  demo csmacd                  - Demonstrate CSMA/CD protocol")
             print("  help                        - Show this help message")
             print("  exit/quit                   - Exit the simulator")
         
@@ -1368,57 +1268,14 @@ def interactive_cli():
             
             network.send_message(source_name, message, target_name)
         
-        elif parts[0] == "setup" and parts[1] == "tokenring":
-            if len(parts) < 4:
-                print("Error: Token ring requires at least 2 devices")
-                continue
-            
-            device_names = parts[2:]
-            if network.setup_token_ring(device_names):
-                print(f"Token ring set up with devices: {', '.join(device_names)}")
-        
-        elif parts[0] == "disable" and parts[1] == "tokenring":
-            network.disable_token_ring()
-            print("Token ring disabled")
-        
-        elif parts[0] == "enable" and parts[1] == "gbn":
-            if len(parts) < 3:
-                print("Error: Insufficient arguments")
-                continue
-            
-            device_name = parts[2]
-            window_size = int(parts[3]) if len(parts) > 3 else 4
-            
-            if network.enable_go_back_n(device_name, window_size):
-                print(f"Go-Back-N protocol enabled for {device_name} with window size {window_size}")
-        
-        elif parts[0] == "disable" and parts[1] == "gbn":
-            if len(parts) < 3:
-                print("Error: Insufficient arguments")
-                continue
-            
-            device_name = parts[2]
-            
-            if network.disable_go_back_n(device_name):
-                print(f"Go-Back-N protocol disabled for {device_name}")
-        
-        elif parts[0] == "create" and parts[1] == "vlan":
-            if len(parts) < 5:
-                print("Error: Insufficient arguments")
-                continue
-            
-            switch_name = parts[2]
-            vlan_id = int(parts[3])
-            port_indices = [int(p) for p in parts[4:]]
-            
-            if network.create_vlan(switch_name, vlan_id, port_indices):
-                print(f"VLAN {vlan_id} created on switch {switch_name} with ports {port_indices}")
-        
         elif parts[0] == "display":
             network.display_network()
         
         elif parts[0] == "demo" and parts[1] == "error":
             demonstrate_error_control()
+        
+        elif parts[0] == "demo" and parts[1] == "csmacd":
+            demonstrate_csma_cd()
         
         else:
             print(f"Error: Unknown command '{parts[0]}'")
@@ -1453,6 +1310,90 @@ def demonstrate_error_control():
     print("\nMessages received by PC2:")
     for data, source in pc2.received_messages:
         print(f"  '{data}' from {source}")
+    
+    return network
+
+
+def demonstrate_csma_cd():
+    """Demonstrate CSMA/CD protocol in the network simulator"""
+    print("\n=== CSMA/CD Protocol Demonstration ===")
+    print(f"Medium busy time range: {BUSY_TIME_RANGE[0]:.2f} to {BUSY_TIME_RANGE[1]:.2f} seconds")
+    print(f"Backoff slot time: {CSMA_CD_SLOT_TIME:.3f} seconds")
+    print(f"Maximum transmission attempts: {CSMA_CD_MAX_ATTEMPTS}")
+    
+    # Create a network
+    network = Network("CSMA_CD_Demo")
+    
+    # Create devices
+    pc1 = network.add_device("PC1")
+    pc2 = network.add_device("PC2")
+    pc3 = network.add_device("PC3")
+    pc4 = network.add_device("PC4")
+    
+    # Create a hub to simulate a shared medium
+    hub = network.add_hub("Hub1")
+    
+    # Connect all devices to the hub
+    link1 = network.add_link("Link1", "PC1", "Hub1")
+    link2 = network.add_link("Link2", "PC2", "Hub1")
+    link3 = network.add_link("Link3", "PC3", "Hub1")
+    link4 = network.add_link("Link4", "PC4", "Hub1")
+    
+    # Display the network
+    network.display_network()
+    
+    # Simulate concurrent transmissions to demonstrate collision detection
+    print("\nSimulating concurrent transmissions with CSMA/CD...")
+    print("This will demonstrate how devices detect collisions and use backoff algorithms")
+    print("Watch the logs to see the CSMA/CD protocol in action")
+    
+    # Define a function to send messages with a delay
+    def delayed_send(delay, source, message, target):
+        print(f"Scheduling {source} to send message in {delay:.2f} seconds")
+        time.sleep(delay)
+        print(f"{source} attempting to send: '{message}'")
+        network.send_message(source, message, target)
+    
+    # Start multiple transmissions with overlapping timing to create collision scenarios
+    threads = []
+    
+    # First transmission
+    t1 = threading.Thread(target=delayed_send, args=(0.1, "PC1", "Message from PC1", "PC3"))
+    threads.append(t1)
+    
+    # Second transmission (likely to collide with first)
+    t2 = threading.Thread(target=delayed_send, args=(0.15, "PC2", "Message from PC2", "PC4"))
+
+    threads.append(t2)
+    
+    # Third transmission (after a delay, may avoid collision)
+    t3 = threading.Thread(target=delayed_send, args=(1.0, "PC4", "Message from PC4", "PC1"))
+    threads.append(t3)
+    
+    # Fourth transmission (even later, should avoid collision)
+    t4 = threading.Thread(target=delayed_send, args=(2.0, "PC3", "Message from PC3", "PC2"))
+    threads.append(t4)
+    
+    # Start all threads
+    for t in threads:
+        t.start()
+    
+    # Wait for all threads to complete
+    for t in threads:
+        t.join()
+    
+    # Wait a bit more to ensure all transmissions complete
+    time.sleep(2)
+    
+    # Display received messages
+    print("\nMessages received by devices:")
+    for name, device in network.devices.items():
+        print(f"{name} received messages:")
+        for data, source in device.received_messages:
+            print(f"  '{data}' from {source}")
+    
+    print("\nCSMA/CD Demonstration Complete")
+    print("Check the logs for detailed information about carrier sensing, collisions, and backoff")
     
     return network
 
