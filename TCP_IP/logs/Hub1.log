@@ -1,0 +1,89 @@
+2025-03-26 06:52:00,103 - INFO - Device Hub1 created with MAC fd:81:66:2b:e6:fc
+2025-03-26 06:52:00,106 - INFO - Connected to link Link2
+2025-03-26 06:52:00,106 - INFO - Connected to link Link3
+2025-03-26 06:52:00,107 - INFO - Connected to link Link4
+2025-03-26 06:52:00,360 - INFO - Hub broadcasting: Frame[DATA:0] a4:30:...-->d6:ad:...: __SIZE__16
+2025-03-26 06:52:00,424 - INFO - Hub broadcasting: Frame[ACK:0] d6:ad:...-->a4:30:...: ACK-1
+2025-03-26 06:52:00,571 - INFO - Hub broadcasting: Frame[DATA:1] a4:30:...-->d6:ad:...: M
+2025-03-26 06:52:00,737 - INFO - Hub broadcasting: Frame[ACK:1] d6:ad:...-->a4:30:...: ACK-2
+2025-03-26 06:52:00,902 - INFO - Hub broadcasting: Frame[DATA:2] a4:30:...-->d6:ad:...: e
+2025-03-26 06:52:01,017 - INFO - Hub broadcasting: Frame[ACK:2] d6:ad:...-->a4:30:...: ACK-3
+2025-03-26 06:52:01,134 - INFO - Hub broadcasting: Frame[DATA:0] d6:ad:...-->f1:c1:...: __SIZE__6
+2025-03-26 06:52:01,203 - INFO - Hub broadcasting: Frame[DATA:3] a4:30:...-->d6:ad:...: {
+2025-03-26 06:52:01,265 - INFO - Hub broadcasting: Frame[DATA:1] d6:ad:...-->f1:c1:...: 
+2025-03-26 06:52:01,266 - INFO - Hub broadcasting: Frame[ACK:3] d6:ad:...-->a4:30:...: ACK-4
+2025-03-26 06:52:01,374 - INFO - Hub broadcasting: Frame[DATA:2] d6:ad:...-->f1:c1:...: e
+2025-03-26 06:52:01,446 - INFO - Hub broadcasting: Frame[DATA:4] a4:30:...-->d6:ad:...: S
+2025-03-26 06:52:01,449 - INFO - Hub broadcasting: Frame[DATA:3] d6:ad:...-->f1:c1:...: s
+2025-03-26 06:52:01,523 - INFO - Hub broadcasting: Frame[DATA:4] d6:ad:...-->f1:c1:...: s
+2025-03-26 06:52:01,560 - INFO - Hub broadcasting: Frame[ACK:4] d6:ad:...-->a4:30:...: ACK-5
+2025-03-26 06:52:01,597 - INFO - Hub broadcasting: Frame[DATA:5] d6:ad:...-->f1:c1:...: a
+2025-03-26 06:52:01,722 - INFO - Hub broadcasting: Frame[DATA:6] d6:ad:...-->f1:c1:...: g
+2025-03-26 06:52:01,808 - INFO - Hub broadcasting: Frame[DATA:5] a4:30:...-->d6:ad:...: i
+2025-03-26 06:52:01,898 - INFO - Hub broadcasting: Frame[DATA:7] d6:ad:...-->f1:c1:...: e
+2025-03-26 06:52:01,974 - INFO - Hub broadcasting: Frame[ACK:5] d6:ad:...-->a4:30:...: ACK-6
+2025-03-26 06:52:02,074 - INFO - Hub broadcasting: Frame[DATA:8] d6:ad:...-->f1:c1:...:  
+2025-03-26 06:52:02,134 - INFO - Hub broadcasting: Frame[DATA:0] 1b:39:...-->a4:30:...: __SIZE__16
+2025-03-26 06:52:02,149 - INFO - Hub broadcasting: Frame[DATA:9] d6:ad:...-->f1:c1:...: n
+2025-03-26 06:52:02,170 - INFO - Hub broadcasting: Frame[DATA:6] a4:30:...-->d6:ad:...: g
+2025-03-26 06:52:02,223 - INFO - Hub broadcasting: Frame[DATA:10] d6:ad:...-->f1:c1:...: r
+2025-03-26 06:52:02,286 - INFO - Hub broadcasting: Frame[ACK:5] d6:ad:...-->a4:30:...: ACK-6
+2025-03-26 06:52:02,297 - INFO - Hub broadcasting: Frame[DATA:11] d6:ad:...-->f1:c1:...: o
+2025-03-26 06:52:02,308 - INFO - Hub broadcasting: Frame[ACK:0] a4:30:...-->1b:39:...: ACK-1
+2025-03-26 06:52:02,422 - INFO - Hub broadcasting: Frame[DATA:12] d6:ad:...-->f1:c1:...: M
+2025-03-26 06:52:02,454 - INFO - Hub broadcasting: Frame[DATA:1] 1b:39:...-->a4:30:...: M
+2025-03-26 06:52:02,484 - INFO - Hub broadcasting: Frame[DATA:7] a4:30:...-->d6:ad:...: e
+2025-03-26 06:52:02,496 - INFO - Hub broadcasting: Frame[DATA:13] d6:ad:...-->f1:c1:...:  
+2025-03-26 06:52:02,549 - INFO - Hub broadcasting: Frame[ACK:5] d6:ad:...-->a4:30:...: ACK-6
+2025-03-26 06:52:02,571 - INFO - Hub broadcasting: Frame[ACK:1] a4:30:...-->1b:39:...: ACK-2
+2025-03-26 06:52:02,571 - INFO - Hub broadcasting: Frame[DATA:14] d6:ad:...-->f1:c1:...: Q
+2025-03-26 06:52:02,646 - INFO - Hub broadcasting: Frame[DATA:8] a4:30:...-->d6:ad:...:  
+2025-03-26 06:52:02,647 - INFO - Hub broadcasting: Frame[DATA:15] d6:ad:...-->f1:c1:...: C
+2025-03-26 06:52:02,711 - INFO - Hub broadcasting: Frame[ACK:5] d6:ad:...-->a4:30:...: ACK-6
+2025-03-26 06:52:02,780 - INFO - Hub broadcasting: Frame[DATA:2] 1b:39:...-->a4:30:...: e
+2025-03-26 06:52:02,906 - INFO - Hub broadcasting: Frame[ACK:2] a4:30:...-->1b:39:...: ACK-3
+2025-03-26 06:52:02,946 - INFO - Hub broadcasting: Frame[DATA:9] a4:30:...-->d6:ad:...: f
+2025-03-26 06:52:02,969 - INFO - Hub broadcasting: Frame[DATA:16] d6:ad:...-->f1:c1:...: 5
+2025-03-26 06:52:03,052 - INFO - Hub broadcasting: Frame[DATA:3] 1b:39:...-->a4:30:...: s
+2025-03-26 06:52:03,096 - INFO - Hub broadcasting: Frame[ACK:5] d6:ad:...-->a4:30:...: ACK-6
+2025-03-26 06:52:03,116 - INFO - Hub broadcasting: Frame[ACK:3] a4:30:...-->1b:39:...: ACK-4
+2025-03-26 06:52:03,259 - INFO - Hub broadcasting: Frame[DATA:4] 1b:39:...-->a4:30:...: q
+2025-03-26 06:52:03,323 - INFO - Hub broadcasting: Frame[ACK:4] a4:30:...-->1b:39:...: ACK-5
+2025-03-26 06:52:03,360 - INFO - Hub broadcasting: Frame[DATA:10] a4:30:...-->d6:ad:...: v
+2025-03-26 06:52:03,416 - INFO - Hub broadcasting: Frame[DATA:5] 1b:39:...-->a4:30:...: a
+2025-03-26 06:52:03,523 - INFO - Hub broadcasting: Frame[ACK:5] a4:30:...-->1b:39:...: ACK-6
+2025-03-26 06:52:03,618 - INFO - Hub broadcasting: Frame[DATA:6] 1b:39:...-->a4:30:...: g
+2025-03-26 06:52:03,676 - INFO - Hub broadcasting: Frame[ACK:5] d6:ad:...-->a4:30:...: ACK-6
+2025-03-26 06:52:03,823 - INFO - Hub broadcasting: Frame[DATA:11] a4:30:...-->d6:ad:...: o
+2025-03-26 06:52:03,834 - INFO - Hub broadcasting: Frame[ACK:6] a4:30:...-->1b:39:...: ACK-7
+2025-03-26 06:52:03,886 - INFO - Hub broadcasting: Frame[ACK:5] d6:ad:...-->a4:30:...: ACK-6
+2025-03-26 06:52:03,980 - INFO - Hub broadcasting: Frame[DATA:7] 1b:39:...-->a4:30:...: e
+2025-03-26 06:52:04,032 - INFO - Hub broadcasting: Frame[DATA:12] a4:30:...-->d6:ad:...: m
+2025-03-26 06:52:04,044 - INFO - Hub broadcasting: Frame[ACK:6] a4:30:...-->1b:39:...: ACK-7
+2025-03-26 06:52:04,096 - INFO - Hub broadcasting: Frame[ACK:5] d6:ad:...-->a4:30:...: ACK-6
+2025-03-26 06:52:04,190 - INFO - Hub broadcasting: Frame[DATA:13] a4:30:...-->d6:ad:...:  
+2025-03-26 06:52:04,342 - INFO - Hub broadcasting: Frame[DATA:8] 1b:39:...-->a4:30:...: `
+2025-03-26 06:52:04,356 - INFO - Hub broadcasting: Frame[ACK:5] d6:ad:...-->a4:30:...: ACK-6
+2025-03-26 06:52:04,451 - INFO - Hub broadcasting: Frame[DATA:14] a4:30:...-->d6:ad:...: P
+2025-03-26 06:52:04,457 - INFO - Hub broadcasting: Frame[ACK:6] a4:30:...-->1b:39:...: ACK-7
+2025-03-26 06:52:04,563 - INFO - Hub broadcasting: Frame[ACK:5] d6:ad:...-->a4:30:...: ACK-6
+2025-03-26 06:52:04,642 - INFO - Hub broadcasting: Frame[DATA:9] 1b:39:...-->a4:30:...: n
+2025-03-26 06:52:04,743 - INFO - Hub broadcasting: Frame[DATA:15] a4:30:...-->d6:ad:...: C
+2025-03-26 06:52:04,870 - INFO - Hub broadcasting: Frame[ACK:6] a4:30:...-->1b:39:...: ACK-7
+2025-03-26 06:52:05,016 - INFO - Hub broadcasting: Frame[ACK:5] d6:ad:...-->a4:30:...: ACK-6
+2025-03-26 06:52:05,124 - INFO - Hub broadcasting: Frame[DATA:10] 1b:39:...-->a4:30:...: r
+2025-03-26 06:52:05,213 - INFO - Hub broadcasting: Frame[DATA:16] a4:30:...-->d6:ad:...: 6
+2025-03-26 06:52:05,239 - INFO - Hub broadcasting: Frame[ACK:6] a4:30:...-->1b:39:...: ACK-7
+2025-03-26 06:52:05,384 - INFO - Hub broadcasting: Frame[DATA:11] 1b:39:...-->a4:30:...: m
+2025-03-26 06:52:05,398 - INFO - Hub broadcasting: Frame[ACK:5] d6:ad:...-->a4:30:...: ACK-6
+2025-03-26 06:52:05,645 - INFO - Hub broadcasting: Frame[ACK:6] a4:30:...-->1b:39:...: ACK-7
+2025-03-26 06:52:05,942 - INFO - Hub broadcasting: Frame[DATA:12] 1b:39:...-->a4:30:...: m
+2025-03-26 06:52:06,058 - INFO - Hub broadcasting: Frame[ACK:6] a4:30:...-->1b:39:...: ACK-7
+2025-03-26 06:52:06,204 - INFO - Hub broadcasting: Frame[DATA:13] 1b:39:...-->a4:30:...:  
+2025-03-26 06:52:06,324 - INFO - Hub broadcasting: Frame[ACK:6] a4:30:...-->1b:39:...: ACK-7
+2025-03-26 06:52:06,420 - INFO - Hub broadcasting: Frame[DATA:14] 1b:39:...-->a4:30:...: P
+2025-03-26 06:52:06,484 - INFO - Hub broadcasting: Frame[ACK:6] a4:30:...-->1b:39:...: ACK-7
+2025-03-26 06:52:06,630 - INFO - Hub broadcasting: Frame[DATA:15] 1b:39:...-->a4:30:...: C
+2025-03-26 06:52:06,796 - INFO - Hub broadcasting: Frame[ACK:6] a4:30:...-->1b:39:...: ACK-7
+2025-03-26 06:52:06,992 - INFO - Hub broadcasting: Frame[DATA:16] 1b:39:...-->a4:30:...: 3
+2025-03-26 06:52:07,106 - INFO - Hub broadcasting: Frame[ACK:6] a4:30:...-->1b:39:...: ACK-7

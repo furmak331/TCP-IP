@@ -1,0 +1,896 @@
+2025-03-26 06:51:29,866 - INFO - PC1 transmitting frame 0 to PC2
+2025-03-26 06:51:29,887 - INFO - Frame 0 successfully transmitted from PC1 to PC2
+2025-03-26 06:51:29,888 - INFO - PC2 transmitting frame 0 to PC1
+2025-03-26 06:51:29,909 - WARNING - Collision detected during PC2's transmission of frame 0
+2025-03-26 06:51:29,909 - INFO - PC2 backing off for 0.050s after collision
+2025-03-26 06:51:29,960 - INFO - PC2 transmitting frame 0 to PC1
+2025-03-26 06:51:29,980 - WARNING - Collision detected during PC2's transmission of frame 0
+2025-03-26 06:51:29,980 - INFO - PC2 backing off for 0.070s after collision
+2025-03-26 06:51:30,052 - INFO - PC2 transmitting frame 0 to PC1
+2025-03-26 06:51:30,073 - INFO - Frame 0 successfully transmitted from PC2 to PC1
+2025-03-26 06:51:30,073 - INFO - PC1 transmitting frame 1 to PC2
+2025-03-26 06:51:30,094 - INFO - Frame 1 successfully transmitted from PC1 to PC2
+2025-03-26 06:51:30,095 - INFO - PC2 transmitting frame 1 to PC1
+2025-03-26 06:51:30,116 - INFO - Frame 1 successfully transmitted from PC2 to PC1
+2025-03-26 06:51:30,117 - INFO - PC1 transmitting frame 2 to PC2
+2025-03-26 06:51:30,138 - INFO - Frame 2 successfully transmitted from PC1 to PC2
+2025-03-26 06:51:30,139 - INFO - PC2 transmitting frame 2 to PC1
+2025-03-26 06:51:30,160 - INFO - Frame 2 successfully transmitted from PC2 to PC1
+2025-03-26 06:51:30,160 - INFO - Medium is busy when PC1 tries to send frame 3
+2025-03-26 06:51:30,212 - INFO - PC1 transmitting frame 3 to PC2
+2025-03-26 06:51:30,232 - INFO - Frame 3 successfully transmitted from PC1 to PC2
+2025-03-26 06:51:30,233 - INFO - PC2 transmitting frame 3 to PC1
+2025-03-26 06:51:30,254 - INFO - Frame 3 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:00,213 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:00,234 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:00,234 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:00,255 - WARNING - Collision detected during PC1's transmission of frame 44
+2025-03-26 06:52:00,255 - INFO - PC1 backing off for 0.048s after collision
+2025-03-26 06:52:00,262 - INFO - PC2 transmitting frame 0 to PC1
+2025-03-26 06:52:00,283 - WARNING - Error introduced in frame 0
+2025-03-26 06:52:00,283 - INFO - Frame 0 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:00,304 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:00,355 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:00,375 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:00,375 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:00,397 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:00,397 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:00,418 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:00,478 - INFO - PC2 transmitting frame 1 to PC1
+2025-03-26 06:52:00,499 - WARNING - Error introduced in frame 1
+2025-03-26 06:52:00,499 - INFO - Frame 1 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:00,790 - INFO - PC2 transmitting frame 2 to PC1
+2025-03-26 06:52:00,811 - INFO - Frame 2 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:01,110 - INFO - Medium is busy when PC2 tries to send frame 3
+2025-03-26 06:52:01,161 - INFO - PC2 transmitting frame 3 to PC1
+2025-03-26 06:52:01,181 - INFO - Frame 3 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:01,217 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:01,237 - WARNING - Collision detected during PC1's transmission of frame 43
+2025-03-26 06:52:01,237 - INFO - PC1 backing off for 0.030s after collision
+2025-03-26 06:52:01,251 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:01,269 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:01,302 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:01,320 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:01,323 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:01,323 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:01,340 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:01,344 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:01,344 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:01,395 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:01,403 - INFO - PC2 transmitting frame 4 to PC1
+2025-03-26 06:52:01,424 - INFO - Frame 4 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:01,441 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:01,446 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:01,462 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:01,467 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:01,467 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:01,488 - WARNING - Collision detected during PC1's transmission of frame 46
+2025-03-26 06:52:01,488 - INFO - PC1 backing off for 0.021s after collision
+2025-03-26 06:52:01,510 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:01,531 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:01,766 - INFO - PC2 transmitting frame 5 to PC1
+2025-03-26 06:52:01,787 - INFO - Frame 5 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:02,078 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:02,099 - INFO - Frame 6 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:02,215 - INFO - PC2 transmitting frame 0 to PC1
+2025-03-26 06:52:02,236 - INFO - Frame 0 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:02,263 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:02,285 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:02,285 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:02,306 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:02,307 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:02,327 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:02,328 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:02,341 - INFO - Medium is busy when PC2 tries to send frame 7
+2025-03-26 06:52:02,349 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:02,391 - INFO - PC2 transmitting frame 7 to PC1
+2025-03-26 06:52:02,412 - INFO - Frame 7 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:02,475 - INFO - Medium is busy when PC2 tries to send frame 1
+2025-03-26 06:52:02,527 - INFO - PC2 transmitting frame 1 to PC1
+2025-03-26 06:52:02,548 - INFO - Frame 1 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:02,604 - INFO - PC2 transmitting frame 8 to PC1
+2025-03-26 06:52:02,625 - WARNING - Error introduced in frame 8
+2025-03-26 06:52:02,625 - INFO - Frame 8 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:02,863 - INFO - PC2 transmitting frame 2 to PC1
+2025-03-26 06:52:02,867 - INFO - PC2 transmitting frame 9 to PC1
+2025-03-26 06:52:02,885 - INFO - Frame 2 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:02,888 - WARNING - Collision detected during PC2's transmission of frame 9
+2025-03-26 06:52:02,888 - INFO - PC2 backing off for 0.015s after collision
+2025-03-26 06:52:02,904 - INFO - PC2 transmitting frame 9 to PC1
+2025-03-26 06:52:02,925 - INFO - Frame 9 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:03,073 - INFO - PC2 transmitting frame 3 to PC1
+2025-03-26 06:52:03,094 - INFO - Frame 3 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:03,250 - INFO - PC2 transmitting frame 10 to PC1
+2025-03-26 06:52:03,263 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:03,271 - WARNING - Collision detected during PC2's transmission of frame 10
+2025-03-26 06:52:03,271 - INFO - PC2 backing off for 0.046s after collision
+2025-03-26 06:52:03,280 - INFO - PC2 transmitting frame 4 to PC1
+2025-03-26 06:52:03,285 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:03,286 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:03,301 - INFO - Frame 4 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:03,307 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:03,307 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:03,318 - INFO - PC2 transmitting frame 10 to PC1
+2025-03-26 06:52:03,328 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:03,329 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:03,329 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:03,339 - INFO - Frame 10 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:03,380 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:03,401 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:03,438 - INFO - PC2 transmitting frame 5 to PC1
+2025-03-26 06:52:03,459 - WARNING - Collision detected during PC2's transmission of frame 5
+2025-03-26 06:52:03,459 - INFO - PC2 backing off for 0.021s after collision
+2025-03-26 06:52:03,481 - INFO - PC2 transmitting frame 5 to PC1
+2025-03-26 06:52:03,502 - INFO - Frame 5 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:03,690 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:03,711 - INFO - Frame 6 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:03,780 - INFO - PC2 transmitting frame 11 to PC1
+2025-03-26 06:52:03,801 - INFO - Frame 11 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:03,940 - INFO - Medium is busy when PC2 tries to send frame 12
+2025-03-26 06:52:03,991 - INFO - PC2 transmitting frame 12 to PC1
+2025-03-26 06:52:04,002 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:04,012 - INFO - Frame 12 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:04,023 - INFO - Frame 6 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:04,149 - INFO - PC2 transmitting frame 13 to PC1
+2025-03-26 06:52:04,169 - INFO - Frame 13 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:04,271 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:04,292 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:04,297 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:04,318 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:04,318 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:04,339 - WARNING - Error introduced in frame 44
+2025-03-26 06:52:04,339 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:04,340 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:04,361 - WARNING - Collision detected during PC1's transmission of frame 45
+2025-03-26 06:52:04,361 - INFO - PC1 backing off for 0.032s after collision
+2025-03-26 06:52:04,363 - INFO - Medium is busy when PC2 tries to send frame 6
+2025-03-26 06:52:04,393 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:04,394 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:04,409 - INFO - PC2 transmitting frame 14 to PC1
+2025-03-26 06:52:04,414 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:04,414 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:04,414 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:04,414 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:04,415 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:04,415 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:04,430 - INFO - Frame 14 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:04,435 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:04,435 - INFO - Frame 6 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:04,435 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:04,650 - INFO - PC2 transmitting frame 15 to PC1
+2025-03-26 06:52:04,671 - INFO - Frame 15 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:04,828 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:04,849 - INFO - Frame 6 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:05,171 - INFO - PC2 transmitting frame 16 to PC1
+2025-03-26 06:52:05,192 - INFO - Frame 16 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:05,197 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:05,218 - INFO - Frame 6 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:05,312 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:05,333 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:05,333 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:05,355 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:05,355 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:05,406 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:05,417 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:05,427 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:05,427 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:05,437 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:05,478 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:05,499 - WARNING - Collision detected during PC1's transmission of frame 46
+2025-03-26 06:52:05,499 - INFO - PC1 backing off for 0.094s after collision
+2025-03-26 06:52:05,500 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:05,522 - INFO - Frame 6 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:05,594 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:05,615 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:06,016 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:06,037 - INFO - Frame 6 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:06,227 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:06,248 - WARNING - Collision detected during PC2's transmission of frame 6
+2025-03-26 06:52:06,248 - INFO - PC2 backing off for 0.034s after collision
+2025-03-26 06:52:06,283 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:06,303 - INFO - Frame 6 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:06,327 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:06,342 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:06,348 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:06,348 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:06,362 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:06,369 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:06,369 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:06,390 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:06,391 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:06,441 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:06,442 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:06,462 - WARNING - Collision detected during PC1's transmission of frame 46
+2025-03-26 06:52:06,462 - INFO - PC1 backing off for 0.097s after collision
+2025-03-26 06:52:06,463 - INFO - Frame 6 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:06,560 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:06,581 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:06,754 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:06,775 - INFO - Frame 6 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:07,064 - INFO - PC2 transmitting frame 6 to PC1
+2025-03-26 06:52:07,085 - INFO - Frame 6 successfully transmitted from PC2 to PC1
+2025-03-26 06:52:07,336 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:07,356 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:07,357 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:07,377 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:07,377 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:07,399 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:07,399 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:07,450 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:07,471 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:07,472 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:08,348 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:08,369 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:08,390 - WARNING - Error introduced in frame 44
+2025-03-26 06:52:08,390 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:08,399 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:08,450 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:08,471 - WARNING - Error introduced in frame 43
+2025-03-26 06:52:08,471 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:08,471 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:08,491 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:08,492 - WARNING - Collision detected during PC1's transmission of frame 44
+2025-03-26 06:52:08,492 - INFO - PC1 backing off for 0.047s after collision
+2025-03-26 06:52:08,512 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:08,512 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:08,540 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:08,560 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:08,560 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:08,563 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:08,581 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:08,581 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:08,584 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:08,602 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:09,355 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:09,406 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:09,427 - WARNING - Collision detected during PC1's transmission of frame 43
+2025-03-26 06:52:09,427 - INFO - PC1 backing off for 0.024s after collision
+2025-03-26 06:52:09,452 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:09,472 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:09,472 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:09,493 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:09,493 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:09,544 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:09,588 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:09,595 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:09,609 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:09,616 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:09,616 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:09,667 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:09,688 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:10,361 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:10,382 - WARNING - Collision detected during PC1's transmission of frame 43
+2025-03-26 06:52:10,382 - INFO - PC1 backing off for 0.018s after collision
+2025-03-26 06:52:10,401 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:10,422 - WARNING - Error introduced in frame 43
+2025-03-26 06:52:10,422 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:10,422 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:10,443 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:10,443 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:10,464 - WARNING - Collision detected during PC1's transmission of frame 45
+2025-03-26 06:52:10,464 - INFO - PC1 backing off for 0.023s after collision
+2025-03-26 06:52:10,488 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:10,509 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:10,509 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:10,530 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:10,530 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:11,364 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:11,385 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:11,385 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:11,406 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:11,406 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:11,427 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:11,427 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:11,479 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:11,499 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:12,377 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:12,398 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:12,398 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:12,419 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:12,419 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:12,419 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:12,439 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:12,440 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:12,440 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:12,491 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:12,512 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:13,386 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:13,407 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:13,407 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:13,442 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:13,458 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:13,493 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:13,509 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:13,514 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:13,514 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:13,530 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:13,530 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:13,535 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:13,581 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:13,602 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:13,602 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:13,623 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:14,397 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:14,419 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:14,419 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:14,440 - WARNING - Collision detected during PC1's transmission of frame 44
+2025-03-26 06:52:14,440 - INFO - PC1 backing off for 0.037s after collision
+2025-03-26 06:52:14,478 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:14,529 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:14,539 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:14,550 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:14,550 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:14,560 - WARNING - Collision detected during PC1's transmission of frame 45
+2025-03-26 06:52:14,560 - INFO - PC1 backing off for 0.042s after collision
+2025-03-26 06:52:14,571 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:14,571 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:14,592 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:14,603 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:14,624 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:15,409 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:15,427 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:15,430 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:15,430 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:15,448 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:15,451 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:15,451 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:15,472 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:15,472 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:15,493 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:16,412 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:16,432 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:16,432 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:16,451 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:16,453 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:16,453 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:16,472 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:16,475 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:16,475 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:16,495 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:16,495 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:17,414 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:17,464 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:17,476 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:17,497 - WARNING - Error introduced in frame 44
+2025-03-26 06:52:17,497 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:17,497 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:17,515 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:17,518 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:17,518 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:17,536 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:17,536 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:17,539 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:17,539 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:17,557 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:17,557 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:17,578 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:17,578 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:17,578 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:17,600 - WARNING - Collision detected during PC1's transmission of frame 46
+2025-03-26 06:52:17,600 - INFO - PC1 backing off for 0.047s after collision
+2025-03-26 06:52:17,648 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:17,669 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:18,424 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:18,445 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:18,445 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:18,497 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:18,518 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:18,518 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:18,539 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:18,539 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:18,560 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:19,437 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:19,446 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:19,459 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:19,459 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:19,467 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:19,480 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:19,480 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:19,501 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:19,501 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:19,523 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:20,440 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:20,461 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:20,461 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:20,512 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:20,533 - WARNING - Error introduced in frame 44
+2025-03-26 06:52:20,533 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:20,534 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:20,554 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:20,554 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:20,575 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:21,450 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:21,471 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:21,471 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:21,492 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:21,492 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:21,513 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:21,513 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:21,564 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:21,585 - WARNING - Collision detected during PC1's transmission of frame 46
+2025-03-26 06:52:21,585 - INFO - PC1 backing off for 0.032s after collision
+2025-03-26 06:52:21,617 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:21,638 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:21,638 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:22,451 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:22,473 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:22,473 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:22,494 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:22,494 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:22,515 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:22,516 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:22,566 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:22,587 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:23,462 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:23,482 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:23,483 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:23,483 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:23,504 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:23,504 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:23,525 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:23,525 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:23,526 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:23,533 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:23,546 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:23,584 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:23,605 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:24,463 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:24,508 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:24,514 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:24,529 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:24,529 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:24,535 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:24,535 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:24,550 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:24,550 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:24,586 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:24,607 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:24,607 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:24,628 - WARNING - Collision detected during PC1's transmission of frame 45
+2025-03-26 06:52:24,628 - INFO - PC1 backing off for 0.048s after collision
+2025-03-26 06:52:24,651 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:24,677 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:24,697 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:24,698 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:24,702 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:24,722 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:24,748 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:24,769 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:25,483 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:25,505 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:25,505 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:25,526 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:25,526 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:25,547 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:25,547 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:25,568 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:26,487 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:26,508 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:26,508 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:26,529 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:26,529 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:26,529 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:26,550 - WARNING - Collision detected during PC1's transmission of frame 45
+2025-03-26 06:52:26,550 - INFO - PC1 backing off for 0.023s after collision
+2025-03-26 06:52:26,550 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:26,550 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:26,571 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:26,574 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:26,594 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:27,498 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:27,528 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:27,549 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:27,549 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:27,549 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:27,570 - WARNING - Error introduced in frame 43
+2025-03-26 06:52:27,570 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:27,570 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:27,570 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:27,591 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:27,591 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:27,612 - WARNING - Collision detected during PC1's transmission of frame 46
+2025-03-26 06:52:27,612 - INFO - PC1 backing off for 0.045s after collision
+2025-03-26 06:52:27,658 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:27,709 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:27,730 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:28,543 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:28,574 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:28,595 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:28,625 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:28,646 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:28,647 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:28,647 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:28,666 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:28,666 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:28,668 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:28,668 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:28,687 - WARNING - Collision detected during PC1's transmission of frame 44
+2025-03-26 06:52:28,687 - INFO - PC1 backing off for 0.026s after collision
+2025-03-26 06:52:28,714 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:28,735 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:28,735 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:28,756 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:28,756 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:28,777 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:29,552 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:29,573 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:29,573 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:29,594 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:29,594 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:29,615 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:29,615 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:29,636 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:30,553 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:30,574 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:30,596 - WARNING - Error introduced in frame 44
+2025-03-26 06:52:30,596 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:30,604 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:30,625 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:30,625 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:30,646 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:30,646 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:30,668 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:30,668 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:30,689 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:31,563 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:31,585 - WARNING - Error introduced in frame 43
+2025-03-26 06:52:31,585 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:31,585 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:31,606 - WARNING - Collision detected during PC1's transmission of frame 44
+2025-03-26 06:52:31,607 - INFO - PC1 backing off for 0.030s after collision
+2025-03-26 06:52:31,637 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:31,658 - WARNING - Error introduced in frame 44
+2025-03-26 06:52:31,658 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:31,658 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:31,679 - WARNING - Collision detected during PC1's transmission of frame 45
+2025-03-26 06:52:31,679 - INFO - PC1 backing off for 0.033s after collision
+2025-03-26 06:52:31,699 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:31,713 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:31,721 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:31,734 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:31,734 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:31,755 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:31,755 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:32,569 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:32,590 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:32,590 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:32,641 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:32,662 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:32,662 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:32,713 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:32,734 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:32,734 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:32,755 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:33,589 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:33,609 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:33,609 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:33,661 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:33,681 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:33,681 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:33,732 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:33,753 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:33,753 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:33,804 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:33,825 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:34,598 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:34,618 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:34,618 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:34,639 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:34,639 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:34,660 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:34,660 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:34,681 - WARNING - Collision detected during PC1's transmission of frame 46
+2025-03-26 06:52:34,681 - INFO - PC1 backing off for 0.035s after collision
+2025-03-26 06:52:34,718 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:34,739 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:35,614 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:35,632 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:35,635 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:35,635 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:35,654 - WARNING - Collision detected during PC1's transmission of frame 44
+2025-03-26 06:52:35,654 - INFO - PC1 backing off for 0.022s after collision
+2025-03-26 06:52:35,677 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:35,687 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:35,698 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:35,707 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:35,707 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:35,728 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:35,728 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:35,749 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:36,626 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:36,677 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:36,701 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:36,727 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:36,748 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:36,748 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:36,752 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:36,769 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:36,769 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:36,803 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:36,821 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:36,842 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:36,842 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:36,853 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:36,863 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:36,874 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:37,636 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:37,657 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:37,657 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:37,708 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:37,729 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:37,729 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:37,750 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:37,750 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:37,771 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:38,649 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:38,670 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:38,670 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:38,721 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:38,742 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:38,742 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:38,763 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:38,763 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:38,784 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:39,661 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:39,681 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:39,681 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:39,733 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:39,753 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:39,754 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:39,775 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:39,775 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:39,796 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:40,672 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:40,686 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:40,694 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:40,694 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:40,707 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:40,715 - WARNING - Error introduced in frame 44
+2025-03-26 06:52:40,715 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:40,716 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:40,737 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:40,737 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:40,758 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:40,758 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:41,675 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:41,696 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:41,696 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:41,717 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:41,718 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:41,738 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:41,738 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:41,759 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:42,676 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:42,697 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:42,698 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:42,718 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:42,718 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:42,739 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:42,739 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:42,739 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:42,790 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:42,811 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:43,688 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:43,709 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:43,709 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:43,761 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:43,781 - WARNING - Error introduced in frame 44
+2025-03-26 06:52:43,781 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:43,782 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:43,815 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:43,833 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:43,836 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:43,836 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:43,854 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:43,854 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:43,854 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:43,905 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:43,926 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:43,926 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:44,702 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:44,723 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:44,723 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:44,744 - WARNING - Error introduced in frame 44
+2025-03-26 06:52:44,744 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:44,744 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:44,766 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:44,766 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:44,816 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:44,837 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:44,837 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:45,715 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:45,736 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:45,736 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:45,758 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:45,758 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:45,779 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:45,779 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:45,779 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:45,800 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:46,735 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:46,746 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:46,767 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:46,786 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:46,836 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:46,867 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:46,887 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:46,888 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:46,888 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:46,888 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:46,908 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:46,908 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:46,910 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:46,910 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:46,928 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:46,928 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:46,950 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:46,950 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:46,971 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:47,745 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:47,766 - WARNING - Error introduced in frame 43
+2025-03-26 06:52:47,766 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:47,766 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:47,787 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:47,787 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:47,809 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:47,809 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:47,830 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:48,765 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:48,787 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:48,787 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:48,808 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:48,808 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:48,817 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:48,829 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:48,829 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:48,829 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:48,837 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:48,850 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:49,784 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:49,805 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:49,805 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:49,826 - WARNING - Error introduced in frame 44
+2025-03-26 06:52:49,826 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:49,827 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:49,841 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:49,848 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:49,848 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:49,862 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:49,869 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:50,805 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:50,856 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:50,866 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:50,877 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:50,877 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:50,898 - WARNING - Error introduced in frame 44
+2025-03-26 06:52:50,898 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:50,898 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:50,917 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:50,938 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:50,938 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:50,950 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:50,959 - WARNING - Collision detected during PC1's transmission of frame 45
+2025-03-26 06:52:50,959 - INFO - PC1 backing off for 0.028s after collision
+2025-03-26 06:52:50,970 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:50,970 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:50,987 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:50,991 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:51,008 - WARNING - Collision detected during PC1's transmission of frame 45
+2025-03-26 06:52:51,008 - INFO - PC1 backing off for 0.083s after collision
+2025-03-26 06:52:51,092 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:51,113 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:51,113 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:51,134 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:51,134 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:51,825 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:51,846 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:51,846 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:51,867 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:51,867 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:51,889 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:51,889 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:51,940 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:51,991 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:52,011 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:52,011 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:52,839 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:52,861 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:52,866 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:52,887 - WARNING - Collision detected during PC1's transmission of frame 43
+2025-03-26 06:52:52,887 - INFO - PC1 backing off for 0.017s after collision
+2025-03-26 06:52:52,904 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:52,925 - WARNING - Error introduced in frame 43
+2025-03-26 06:52:52,925 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:52,925 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:52,947 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:52,947 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:52,961 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:52,968 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:52,968 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:52,982 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:52,982 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:52,989 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:52,989 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:53,884 - INFO - Medium is busy when PC1 tries to send frame 43
+2025-03-26 06:52:53,935 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:53,955 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:53,955 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:53,976 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:53,976 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:53,985 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:53,997 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:53,997 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:54,007 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:54,019 - WARNING - Collision detected during PC1's transmission of frame 46
+2025-03-26 06:52:54,019 - INFO - PC1 backing off for 0.036s after collision
+2025-03-26 06:52:54,056 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:54,077 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:54,891 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:54,912 - WARNING - Error introduced in frame 43
+2025-03-26 06:52:54,912 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:54,912 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:54,964 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:55,010 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:55,015 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:55,032 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:55,032 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:55,036 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:55,036 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:55,083 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:55,086 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:55,104 - WARNING - Error introduced in frame 46
+2025-03-26 06:52:55,104 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:55,107 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:55,107 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:55,128 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:55,900 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:55,922 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:55,922 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:55,943 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:55,943 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:55,994 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:56,014 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:56,014 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:56,014 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:56,036 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:56,912 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:56,912 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:56,933 - WARNING - Error introduced in frame 43
+2025-03-26 06:52:56,933 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:56,934 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:56,934 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:56,954 - WARNING - Collision detected during PC1's transmission of frame 44
+2025-03-26 06:52:56,954 - INFO - PC1 backing off for 0.038s after collision
+2025-03-26 06:52:56,993 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:57,014 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:57,014 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:57,034 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:57,036 - WARNING - Error introduced in frame 45
+2025-03-26 06:52:57,036 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:57,036 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:57,055 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:57,057 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:57,933 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:57,953 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:57,953 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:57,975 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:57,975 - INFO - Medium is busy when PC1 tries to send frame 45
+2025-03-26 06:52:58,026 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:58,046 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:58,046 - INFO - Medium is busy when PC1 tries to send frame 46
+2025-03-26 06:52:58,097 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:58,118 - INFO - Frame 46 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:58,933 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:58,953 - WARNING - Collision detected during PC1's transmission of frame 43
+2025-03-26 06:52:58,953 - INFO - PC1 backing off for 0.042s after collision
+2025-03-26 06:52:58,961 - INFO - Medium is busy when PC1 tries to send frame 44
+2025-03-26 06:52:58,996 - INFO - PC1 transmitting frame 43 to PC2
+2025-03-26 06:52:59,012 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:59,016 - INFO - Frame 43 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:59,016 - INFO - PC1 transmitting frame 44 to PC2
+2025-03-26 06:52:59,033 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:59,037 - INFO - Frame 44 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:59,037 - INFO - PC1 transmitting frame 45 to PC2
+2025-03-26 06:52:59,058 - INFO - Frame 45 successfully transmitted from PC1 to PC2
+2025-03-26 06:52:59,058 - INFO - PC1 transmitting frame 46 to PC2
+2025-03-26 06:52:59,079 - INFO - Frame 46 successfully transmitted from PC1 to PC2

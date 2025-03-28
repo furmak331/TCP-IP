@@ -1,0 +1,344 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{float}
+
+% Define colors for code listings
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Configure code listings
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+\title{TCP/IP Network Simulator\\
+\large Documentation}
+\author{Furqan Makhdoomi (2022BITE005)\\
+Mohammad Haashid (2022BITE054)\\
+Mohammad Huzaif (2022BITE047)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+This document provides a comprehensive overview of our TCP/IP Network Simulator, a modular simulator focusing on the Physical and Data Link Layers with extensibility for higher layers. The simulator is designed to demonstrate key networking concepts including error control, flow control, and medium access control protocols.
+
+\subsection{Project Overview}
+The TCP/IP Network Simulator is an educational tool that allows users to:
+\begin{itemize}
+    \item Create and visualize network topologies
+    \item Simulate data transmission between network devices
+    \item Implement and observe various network protocols
+    \item Analyze network performance under different conditions
+    \item Understand error detection and correction mechanisms
+\end{itemize}
+
+\section{Architecture}
+\subsection{Layered Design}
+The simulator follows the TCP/IP layered architecture, with current implementation focusing on:
+
+\begin{itemize}
+    \item \textbf{Physical Layer}: Simulates the transmission of bits over physical media
+    \item \textbf{Data Link Layer}: Handles framing, addressing, error control, and medium access
+\end{itemize}
+
+\subsection{Core Components}
+The simulator consists of the following core components:
+
+\begin{itemize}
+    \item \textbf{Device}: Represents network endpoints such as computers and servers
+    \item \textbf{Link}: Represents physical connections between devices
+    \item \textbf{Frame}: Encapsulates data for transmission at the Data Link Layer
+    \item \textbf{MAC Address}: Provides unique identification for network devices
+    \item \textbf{Network}: Manages the overall network topology and simulation
+    \item \textbf{Hub}: Implements a simple signal repeater that broadcasts to all connected devices
+    \item \textbf{Bridge/Switch}: Implements intelligent frame forwarding based on MAC addresses
+\end{itemize}
+
+These components interact to create a complete network simulation environment, with each component handling specific aspects of the network's operation.
+
+\section{Physical Layer Implementation}
+\subsection{Network Devices}
+The simulator implements various network devices:
+
+\begin{itemize}
+    \item \textbf{End Devices}: Computers, servers, and other endpoints
+    \item \textbf{Hubs}: Simple signal repeaters that broadcast to all connected devices
+    \item \textbf{Links}: Physical connections between devices
+\end{itemize}
+
+\subsection{Transmission Medium}
+Links in the simulator represent the physical transmission medium with the following properties:
+
+\begin{itemize}
+    \item Transmission delay simulation
+    \item Medium state (busy/free) tracking
+    \item Collision detection capabilities
+    \item Error injection for realistic simulation
+\end{itemize}
+
+\section{Data Link Layer Implementation}
+\subsection{Framing}
+Data is encapsulated in frames with the following structure:
+\begin{itemize}
+    \item Source MAC address
+    \item Destination MAC address
+    \item Sequence number
+    \item Frame type (DATA, ACK, NAK)
+    \item Data payload
+    \item Checksum for error detection
+\end{itemize}
+
+\subsection{Addressing}
+The simulator implements MAC addressing with the following features:
+\begin{itemize}
+    \item Unique MAC address generation for each device
+    \item Address comparison and matching
+    \item Broadcast address support (FF:FF:FF:FF:FF:FF)
+\end{itemize}
+
+\section{Protocol Implementations}
+\subsection{Error Control}
+\subsubsection{Checksum}
+Error detection is implemented using a simple checksum algorithm:
+\begin{lstlisting}[language=Python, caption=Checksum Implementation]
+def _calculate_checksum(self):
+    """Calculate a simple checksum for error detection"""
+    # Use a simple sum of bytes as checksum for demonstration
+    checksum = 0
+    # Include header fields in checksum
+    for c in str(self.source_mac) + str(self.destination_mac) + str(self.sequence_number):
+        checksum = (checksum + ord(c)) % 256
+    # Include data in checksum
+    for c in self.data:
+        checksum = (checksum + ord(c)) % 256
+    return checksum
+\end{lstlisting}
+
+\subsubsection{Error Injection}
+To test error detection and correction, the simulator can introduce random bit errors:
+\begin{lstlisting}[language=Python, caption=Error Injection]
+def introduce_error(self):
+    """Introduce a random bit error in the frame data for testing"""
+    if len(self.data) > 0:
+        char_pos = random.randint(0, len(self.data) - 1)
+        char_list = list(self.data)
+        # Flip a random bit in the selected character
+        char_code = ord(char_list[char_pos])
+        bit_pos = random.randint(0, 7)
+        char_code ^= (1 << bit_pos)  # Flip the bit
+        char_list[char_pos] = chr(char_code)
+        self.data = ''.join(char_list)
+        # Don't update checksum to simulate error
+\end{lstlisting}
+
+\subsection{Flow Control}
+\subsubsection{Stop-and-Wait}
+The simulator implements the Stop-and-Wait protocol for basic flow control:
+\begin{itemize}
+    \item Sender transmits a frame and waits for acknowledgment
+    \item Receiver sends ACK upon successful receipt
+    \item Timeout mechanism for retransmission
+    \item Simple but inefficient utilization of bandwidth
+\end{itemize}
+
+\subsubsection{Go-Back-N}
+For improved efficiency, the Go-Back-N protocol is implemented:
+\begin{itemize}
+    \item Sliding window mechanism allows multiple unacknowledged frames
+    \item Configurable window size
+    \item Cumulative acknowledgments
+    \item Timeout-based retransmission of all unacknowledged frames
+\end{itemize}
+
+\subsection{Medium Access Control}
+\subsubsection{CSMA/CD}
+The simulator implements Carrier Sense Multiple Access with Collision Detection:
+\begin{itemize}
+    \item Carrier sensing before transmission
+    \item Random medium busy simulation
+    \item Collision detection during transmission
+    \item Binary exponential backoff algorithm
+    \item Jam signal transmission upon collision
+\end{itemize}
+
+\begin{lstlisting}[language=Python, caption=Simplified CSMA/CD Implementation]
+def transmit(self, frame, source):
+    # Create a copy of the frame
+    transmitted_frame = Frame(...)
+    
+    # Simplified CSMA/CD implementation
+    attempts = 0
+    max_attempts = 5
+    
+    while attempts < max_attempts:
+        # Randomly make the medium busy (20% chance)
+        if random.random() < 0.2:
+            self.logger.info(f"Medium is busy when {source.name} tries to send frame {frame.sequence_number}")
+            time.sleep(0.05)
+            attempts += 1
+            continue
+        
+        # Medium is free, proceed with transmission
+        self.logger.info(f"{source.name} transmitting frame {frame.sequence_number} to {destination.name}")
+        time.sleep(0.02)
+        
+        # Small chance of collision (10%)
+        if random.random() < 0.1:
+            self.logger.warning(f"Collision detected during {source.name}'s transmission")
+            # Apply backoff
+            backoff_time = random.uniform(0.01, 0.05) * (attempts + 1)
+            self.logger.info(f"{source.name} backing off for {backoff_time:.3f}s after collision")
+            time.sleep(backoff_time)
+            attempts += 1
+            continue
+        
+        # Successful transmission
+        destination.receive_message(transmitted_frame, source)
+        return True
+    
+    # Max attempts reached
+    return False
+\end{lstlisting}
+
+\section{Simulation Features}
+\subsection{Network Creation}
+The simulator provides a flexible API for creating network topologies:
+\begin{itemize}
+    \item Adding and removing devices
+    \item Creating links between devices
+    \item Connecting and disconnecting endpoints
+\end{itemize}
+
+\subsection{Message Transmission}
+Users can simulate data transmission with various options:
+\begin{itemize}
+    \item Point-to-point communication
+    \item Broadcasting
+    \item Protocol selection (Stop-and-Wait, Go-Back-N)
+    \item Error control configuration
+\end{itemize}
+
+\subsection{Demonstration Modes}
+The simulator includes specialized demonstration modes:
+\begin{itemize}
+    \item \textbf{Error Control Demo}: Shows error detection and correction
+    \item \textbf{CSMA/CD Demo}: Demonstrates medium access control with collision handling
+\end{itemize}
+
+\section{User Interface}
+\subsection{Command Line Interface}
+The simulator provides an interactive command-line interface:
+\begin{lstlisting}[language=bash, caption=CLI Example]
+Enter command: add device pc1
+2025-03-24 05:59:01,703 - p1 - INFO - Device p1 created with MAC ac:e9:68:a7:63:f1
+
+Enter command: add device pc2
+2025-03-24 05:59:04,621 - p2 - INFO - Device p2 created with MAC a2:82:e4:57:8c:a1
+
+Enter command: add link l1 p1 p2
+2025-03-24 05:59:15,609 - p1 - INFO - Connected to link l1
+2025-03-24 05:59:15,609 - p2 - INFO - Connected to link l1
+
+Enter command: send p1 01111 p2
+2025-03-24 05:59:21,098 - p1 - INFO - Sending message: 01111
+\end{lstlisting}
+
+\subsection{Logging}
+Comprehensive logging provides visibility into the simulation:
+\begin{itemize}
+    \item Device-level logs
+    \item Link-level logs
+    \item Protocol operation logs
+    \item Error and collision reporting
+\end{itemize}
+
+\section{Theoretical Concepts}
+\subsection{Error Control Theory}
+The simulator demonstrates key error control concepts:
+\begin{itemize}
+    \item \textbf{Error Detection}: Using checksums to identify corrupted frames
+    \item \textbf{ARQ (Automatic Repeat Request)}: Retransmission of corrupted or lost frames
+    \item \textbf{Positive Acknowledgment}: Confirming successful receipt of frames
+    \item \textbf{Negative Acknowledgment}: Requesting retransmission of specific frames
+\end{itemize}
+
+\subsection{Flow Control Theory}
+Flow control mechanisms implemented in the simulator:
+\begin{itemize}
+    \item \textbf{Sliding Window}: Allowing multiple frames in transit
+    \item \textbf{Window Size}: Controlling the number of unacknowledged frames
+    \item \textbf{Buffering}: Storing received frames for in-order delivery
+    \item \textbf{Timeout}: Detecting lost frames and triggering retransmission
+\end{itemize}
+
+\subsection{Medium Access Control Theory}
+The CSMA/CD implementation demonstrates:
+\begin{itemize}
+    \item \textbf{Carrier Sensing}: Checking if the medium is busy before transmitting
+    \item \textbf{Multiple Access}: Allowing multiple devices to share the medium
+    \item \textbf{Collision Detection}: Identifying when multiple devices transmit simultaneously
+    \item \textbf{Binary Exponential Backoff}: Algorithm for reducing collision probability
+\end{itemize}
+
+\section{Performance Considerations}
+\subsection{Efficiency Analysis}
+The simulator allows comparison of protocol efficiency:
+\begin{itemize}
+    \item Stop-and-Wait vs. Go-Back-N throughput
+    \item Impact of window size on performance
+    \item Effect of error rate on throughput
+    \item Collision frequency under different loads
+\end{itemize}
+
+\subsection{Optimization Techniques}
+Several optimizations are implemented:
+\begin{itemize}
+    \item Efficient frame processing
+    \item Timeout management
+    \item Collision handling
+    \item Backoff algorithm tuning
+\end{itemize}
+
+\section{Conclusion}
+The TCP/IP Network Simulator provides a comprehensive platform for understanding and experimenting with network protocols at the Physical and Data Link layers. Through its modular design and interactive interface, users can gain practical insights into the operation of network protocols and the challenges of reliable data transmission.
+
+\subsection{Future Work}
+Potential extensions to the simulator include:
+\begin{itemize}
+    \item Implementation of Network Layer protocols (IP, routing)
+    \item Transport Layer protocols (TCP, UDP)
+    \item Advanced visualization capabilities
+    \item Performance metrics and statistics
+    \item Integration with external tools
+\end{itemize}
+
+\end{document}

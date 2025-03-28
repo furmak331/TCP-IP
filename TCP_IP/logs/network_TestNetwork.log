@@ -1,0 +1,13 @@
+2025-03-26 06:51:29,859 - INFO - Added device: PC1
+2025-03-26 06:51:29,860 - INFO - Added device: PC2
+2025-03-26 06:51:29,862 - INFO - Added link: Link1 connecting PC1 and PC2
+2025-03-26 06:51:29,863 - INFO - Enabled Go-Back-N protocol for PC1 with window size 4
+2025-03-26 06:52:00,100 - ERROR - A device with name 'PC1' already exists
+2025-03-26 06:52:00,100 - ERROR - A device with name 'PC2' already exists
+2025-03-26 06:52:00,102 - INFO - Added device: PC3
+2025-03-26 06:52:00,103 - INFO - Added device: PC4
+2025-03-26 06:52:00,103 - INFO - Added hub: Hub1
+2025-03-26 06:52:00,105 - ERROR - A link with name 'Link1' already exists
+2025-03-26 06:52:00,106 - INFO - Added link: Link2 connecting PC2 and Hub1
+2025-03-26 06:52:00,106 - INFO - Added link: Link3 connecting PC3 and Hub1
+2025-03-26 06:52:00,107 - INFO - Added link: Link4 connecting PC4 and Hub1

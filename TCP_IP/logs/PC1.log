@@ -1,0 +1,422 @@
+2025-03-26 06:51:29,858 - INFO - Device PC1 created with MAC f1:c1:d7:91:4f:e3
+2025-03-26 06:51:29,860 - INFO - Connected to link Link1
+2025-03-26 06:51:29,864 - INFO - Sending message: This is a test message with error control!
+2025-03-26 06:51:29,865 - INFO - Using Go-Back-N protocol with window size 4 for 43 frames
+2025-03-26 06:51:29,866 - INFO - Sending Frame[DATA:0] f1:c1:...-->a4:30:...: __SIZE__42
+2025-03-26 06:51:30,073 - INFO - Received valid frame
+2025-03-26 06:51:30,073 - INFO - Received ACK 1 (frames up to 0 acknowledged)
+2025-03-26 06:51:30,073 - INFO - Sending Frame[DATA:1] f1:c1:...-->a4:30:...: T
+2025-03-26 06:51:30,116 - INFO - Received valid frame
+2025-03-26 06:51:30,116 - INFO - Received ACK 2 (frames up to 1 acknowledged)
+2025-03-26 06:51:30,117 - INFO - Sending Frame[DATA:2] f1:c1:...-->a4:30:...: h
+2025-03-26 06:51:30,160 - INFO - Received valid frame
+2025-03-26 06:51:30,160 - INFO - Received ACK 3 (frames up to 2 acknowledged)
+2025-03-26 06:51:30,160 - INFO - Sending Frame[DATA:3] f1:c1:...-->a4:30:...: i
+2025-03-26 06:51:30,254 - INFO - Received valid frame
+2025-03-26 06:51:30,254 - INFO - Received ACK 4 (frames up to 3 acknowledged)
+2025-03-26 06:51:30,274 - INFO - Window moved: base is now at frame 43
+2025-03-26 06:51:30,274 - INFO - All 43 frames sent successfully
+2025-03-26 06:52:00,211 - INFO - Sending message: Message from PC1
+2025-03-26 06:52:00,212 - INFO - Using Go-Back-N protocol with window size 4 for 17 frames
+2025-03-26 06:52:00,212 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:00,234 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:00,375 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:00,397 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:01,217 - WARNING - Frame 43 timed out, retransmitting
+2025-03-26 06:52:01,251 - WARNING - Timeout detected for frame 44
+2025-03-26 06:52:01,251 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:01,251 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:01,323 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:01,344 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:01,441 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:01,467 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:02,263 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:02,263 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:02,263 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:02,285 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:02,306 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:02,327 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:03,263 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:03,263 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:03,263 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:03,285 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:03,307 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:03,329 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:04,271 - WARNING - Frame 43 timed out, retransmitting
+2025-03-26 06:52:04,297 - WARNING - Timeout detected for frame 44
+2025-03-26 06:52:04,297 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:04,297 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:04,318 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:04,339 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:04,393 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:04,414 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:05,312 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:05,312 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:05,312 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:05,333 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:05,355 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:05,417 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:05,427 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:06,327 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:06,327 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:06,327 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:06,342 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:06,348 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:06,369 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:06,390 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:07,335 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:07,335 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:07,335 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:07,356 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:07,377 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:07,399 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:08,348 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:08,348 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:08,348 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:08,369 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:08,471 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:08,491 - WARNING - Frame 45 timed out, retransmitting
+2025-03-26 06:52:08,512 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:08,560 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:08,581 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:09,355 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:09,355 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:09,355 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:09,472 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:09,493 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:09,588 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:09,616 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:10,360 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:10,360 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:10,361 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:10,422 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:10,443 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:10,509 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:11,363 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:11,363 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:11,364 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:11,385 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:11,406 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:11,427 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:12,376 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:12,376 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:12,377 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:12,398 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:12,418 - WARNING - Frame 45 timed out, retransmitting
+2025-03-26 06:52:12,419 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:12,440 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:13,385 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:13,385 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:13,386 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:13,407 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:13,442 - WARNING - Frame 45 timed out, retransmitting
+2025-03-26 06:52:13,514 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:13,530 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:13,602 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:14,397 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:14,397 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:14,397 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:14,419 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:14,539 - WARNING - Frame 45 timed out, retransmitting
+2025-03-26 06:52:14,550 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:14,571 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:15,408 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:15,409 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:15,409 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:15,427 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:15,430 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:15,451 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:15,472 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:16,411 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:16,411 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:16,411 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:16,432 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:16,451 - WARNING - Frame 45 timed out, retransmitting
+2025-03-26 06:52:16,453 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:16,475 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:17,413 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:17,413 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:17,413 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:17,476 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:17,497 - WARNING - Frame 45 timed out, retransmitting
+2025-03-26 06:52:17,518 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:17,536 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:17,557 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:17,578 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:18,424 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:18,424 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:18,424 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:18,445 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:18,518 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:18,539 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:19,436 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:19,437 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:19,437 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:19,446 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:19,459 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:19,480 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:19,501 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:20,439 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:20,439 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:20,439 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:20,461 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:20,533 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:20,554 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:21,449 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:21,449 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:21,449 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:21,471 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:21,492 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:21,513 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:22,451 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:22,451 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:22,451 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:22,473 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:22,494 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:22,515 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:23,461 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:23,461 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:23,461 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:23,482 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:23,483 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:23,504 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:23,526 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:24,463 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:24,463 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:24,463 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:24,508 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:24,529 - WARNING - Frame 45 timed out, retransmitting
+2025-03-26 06:52:24,535 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:24,607 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:24,651 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:24,698 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:25,482 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:25,482 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:25,483 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:25,505 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:25,526 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:25,547 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:26,486 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:26,487 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:26,487 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:26,508 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:26,529 - WARNING - Frame 45 timed out, retransmitting
+2025-03-26 06:52:26,529 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:26,550 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:27,498 - WARNING - Frame 43 timed out, retransmitting
+2025-03-26 06:52:27,527 - WARNING - Timeout detected for frame 44
+2025-03-26 06:52:27,527 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:27,527 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:27,549 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:27,570 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:27,591 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:28,543 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:28,543 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:28,543 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:28,574 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:28,647 - WARNING - Frame 45 timed out, retransmitting
+2025-03-26 06:52:28,666 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:28,735 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:28,756 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:29,551 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:29,551 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:29,551 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:29,573 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:29,594 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:29,615 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:30,553 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:30,553 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:30,553 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:30,574 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:30,625 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:30,646 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:30,668 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:31,563 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:31,563 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:31,563 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:31,585 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:31,658 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:31,699 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:31,734 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:32,568 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:32,568 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:32,568 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:32,590 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:32,662 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:32,734 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:33,588 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:33,588 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:33,588 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:33,609 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:33,681 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:33,753 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:34,597 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:34,597 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:34,598 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:34,618 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:34,639 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:34,660 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:35,613 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:35,613 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:35,613 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:35,632 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:35,635 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:35,707 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:35,728 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:36,625 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:36,625 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:36,625 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:36,701 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:36,748 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:36,769 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:36,842 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:37,636 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:37,636 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:37,636 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:37,657 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:37,729 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:37,750 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:38,648 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:38,649 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:38,649 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:38,670 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:38,742 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:38,763 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:39,660 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:39,660 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:39,661 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:39,681 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:39,753 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:39,775 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:40,672 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:40,672 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:40,672 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:40,686 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:40,694 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:40,715 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:40,737 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:41,675 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:41,675 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:41,675 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:41,696 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:41,717 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:41,738 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:42,676 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:42,676 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:42,676 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:42,697 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:42,718 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:42,739 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:43,688 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:43,688 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:43,688 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:43,709 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:43,781 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:43,815 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:43,854 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:44,701 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:44,701 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:44,702 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:44,723 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:44,744 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:44,766 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:45,714 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:45,714 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:45,714 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:45,736 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:45,758 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:45,779 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:46,735 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:46,735 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:46,735 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:46,746 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:46,867 - WARNING - Frame 45 timed out, retransmitting
+2025-03-26 06:52:46,888 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:46,908 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:46,928 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:46,950 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:47,744 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:47,744 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:47,744 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:47,766 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:47,787 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:47,809 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:48,765 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:48,765 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:48,765 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:48,787 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:48,808 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:48,817 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:48,829 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:49,784 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:49,784 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:49,784 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:49,805 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:49,826 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:49,841 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:49,848 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:50,804 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:50,804 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:50,804 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:50,866 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:50,877 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:50,898 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:50,938 - WARNING - Frame 45 timed out, retransmitting
+2025-03-26 06:52:50,970 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:51,113 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:51,825 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:51,825 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:51,825 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:51,846 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:51,867 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:51,889 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:52,839 - WARNING - Frame 43 timed out, retransmitting
+2025-03-26 06:52:52,866 - WARNING - Timeout detected for frame 44
+2025-03-26 06:52:52,866 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:52,866 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:52,925 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:52,947 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:52,961 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:52,968 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:53,883 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:53,883 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:53,883 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:53,955 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:53,976 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:53,985 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:53,997 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:54,891 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:54,891 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:54,891 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:54,912 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:55,010 - WARNING - Frame 45 timed out, retransmitting
+2025-03-26 06:52:55,032 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:55,036 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:55,107 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:55,900 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:55,900 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:55,900 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:55,922 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:55,943 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:56,014 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:56,912 - WARNING - Frame 43 timed out, retransmitting
+2025-03-26 06:52:56,912 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:56,912 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:56,912 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:56,934 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:57,014 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:57,034 - WARNING - Frame 46 timed out, retransmitting
+2025-03-26 06:52:57,036 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:57,932 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:57,932 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:57,932 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:57,953 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:57,975 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:58,046 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s
+2025-03-26 06:52:58,932 - WARNING - Timeout detected for frame 43
+2025-03-26 06:52:58,932 - INFO - Retransmitting all frames from 0 to 3
+2025-03-26 06:52:58,932 - INFO - Sending Frame[DATA:43] f1:c1:...-->1b:39:...: __SIZE__16
+2025-03-26 06:52:58,961 - WARNING - Frame 44 timed out, retransmitting
+2025-03-26 06:52:59,016 - INFO - Sending Frame[DATA:44] f1:c1:...-->1b:39:...: M
+2025-03-26 06:52:59,037 - INFO - Sending Frame[DATA:45] f1:c1:...-->1b:39:...: e
+2025-03-26 06:52:59,058 - INFO - Sending Frame[DATA:46] f1:c1:...-->1b:39:...: s

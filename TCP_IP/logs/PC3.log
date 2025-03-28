@@ -1,0 +1,54 @@
+2025-03-26 06:52:00,102 - INFO - Device PC3 created with MAC 1b:39:07:1b:4a:64
+2025-03-26 06:52:00,106 - INFO - Connected to link Link3
+2025-03-26 06:52:02,112 - INFO - Sending message: Message from PC3
+2025-03-26 06:52:02,112 - INFO - Sending Frame[DATA:0] 1b:39:...-->a4:30:...: __SIZE__16
+2025-03-26 06:52:02,329 - INFO - Received valid frame
+2025-03-26 06:52:02,329 - INFO - Received ACK 1 (frames up to 0 acknowledged)
+2025-03-26 06:52:02,433 - INFO - Sending Frame[DATA:1] 1b:39:...-->a4:30:...: M
+2025-03-26 06:52:02,593 - INFO - Received valid frame
+2025-03-26 06:52:02,593 - INFO - Received ACK 2 (frames up to 1 acknowledged)
+2025-03-26 06:52:02,647 - INFO - Sending Frame[DATA:2] 1b:39:...-->a4:30:...: e
+2025-03-26 06:52:02,927 - INFO - Received valid frame
+2025-03-26 06:52:02,927 - INFO - Received ACK 3 (frames up to 2 acknowledged)
+2025-03-26 06:52:03,031 - INFO - Sending Frame[DATA:3] 1b:39:...-->a4:30:...: s
+2025-03-26 06:52:03,186 - INFO - Received valid frame
+2025-03-26 06:52:03,186 - INFO - Received ACK 4 (frames up to 3 acknowledged)
+2025-03-26 06:52:03,238 - INFO - Sending Frame[DATA:4] 1b:39:...-->a4:30:...: s
+2025-03-26 06:52:03,343 - INFO - Received valid frame
+2025-03-26 06:52:03,343 - INFO - Received ACK 5 (frames up to 4 acknowledged)
+2025-03-26 06:52:03,396 - INFO - Sending Frame[DATA:5] 1b:39:...-->a4:30:...: a
+2025-03-26 06:52:03,544 - INFO - Received valid frame
+2025-03-26 06:52:03,544 - INFO - Received ACK 6 (frames up to 5 acknowledged)
+2025-03-26 06:52:03,597 - INFO - Sending Frame[DATA:6] 1b:39:...-->a4:30:...: g
+2025-03-26 06:52:03,855 - INFO - Received valid frame
+2025-03-26 06:52:03,855 - INFO - Received ACK 7 (frames up to 6 acknowledged)
+2025-03-26 06:52:03,959 - INFO - Sending Frame[DATA:7] 1b:39:...-->a4:30:...: e
+2025-03-26 06:52:04,065 - INFO - Received valid frame
+2025-03-26 06:52:04,065 - INFO - Received ACK 7 (frames up to 6 acknowledged)
+2025-03-26 06:52:04,270 - INFO - Sending Frame[DATA:8] 1b:39:...-->a4:30:...:  
+2025-03-26 06:52:04,478 - INFO - Received valid frame
+2025-03-26 06:52:04,478 - INFO - Received ACK 7 (frames up to 6 acknowledged)
+2025-03-26 06:52:04,621 - INFO - Sending Frame[DATA:9] 1b:39:...-->a4:30:...: f
+2025-03-26 06:52:04,949 - INFO - Received valid frame
+2025-03-26 06:52:04,949 - INFO - Received ACK 7 (frames up to 6 acknowledged)
+2025-03-26 06:52:05,052 - INFO - Sending Frame[DATA:10] 1b:39:...-->a4:30:...: r
+2025-03-26 06:52:05,260 - INFO - Received valid frame
+2025-03-26 06:52:05,260 - INFO - Received ACK 7 (frames up to 6 acknowledged)
+2025-03-26 06:52:05,312 - INFO - Sending Frame[DATA:11] 1b:39:...-->a4:30:...: o
+2025-03-26 06:52:05,767 - INFO - Received valid frame
+2025-03-26 06:52:05,767 - INFO - Received ACK 7 (frames up to 6 acknowledged)
+2025-03-26 06:52:05,921 - INFO - Sending Frame[DATA:12] 1b:39:...-->a4:30:...: m
+2025-03-26 06:52:06,079 - INFO - Received valid frame
+2025-03-26 06:52:06,079 - INFO - Received ACK 7 (frames up to 6 acknowledged)
+2025-03-26 06:52:06,132 - INFO - Sending Frame[DATA:13] 1b:39:...-->a4:30:...:  
+2025-03-26 06:52:06,346 - INFO - Received valid frame
+2025-03-26 06:52:06,346 - INFO - Received ACK 7 (frames up to 6 acknowledged)
+2025-03-26 06:52:06,399 - INFO - Sending Frame[DATA:14] 1b:39:...-->a4:30:...: P
+2025-03-26 06:52:06,505 - INFO - Received valid frame
+2025-03-26 06:52:06,505 - INFO - Received ACK 7 (frames up to 6 acknowledged)
+2025-03-26 06:52:06,609 - INFO - Sending Frame[DATA:15] 1b:39:...-->a4:30:...: C
+2025-03-26 06:52:06,817 - INFO - Received valid frame
+2025-03-26 06:52:06,817 - INFO - Received ACK 7 (frames up to 6 acknowledged)
+2025-03-26 06:52:06,971 - INFO - Sending Frame[DATA:16] 1b:39:...-->a4:30:...: 3
+2025-03-26 06:52:07,128 - INFO - Received valid frame
+2025-03-26 06:52:07,128 - INFO - Received ACK 7 (frames up to 6 acknowledged)

@@ -1,0 +1,237 @@
+2025-03-26 06:52:00,283 - INFO - PC2 transmitting frame 0 to Hub1
+2025-03-26 06:52:00,304 - WARNING - Collision detected during PC2's transmission of frame 0
+2025-03-26 06:52:00,304 - INFO - PC2 backing off for 0.034s after collision
+2025-03-26 06:52:00,339 - INFO - PC2 transmitting frame 0 to Hub1
+2025-03-26 06:52:00,360 - INFO - Frame 0 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:00,424 - INFO - Hub1 transmitting frame 0 to PC2
+2025-03-26 06:52:00,446 - INFO - Frame 0 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:00,499 - INFO - Medium is busy when PC2 tries to send frame 1
+2025-03-26 06:52:00,551 - INFO - PC2 transmitting frame 1 to Hub1
+2025-03-26 06:52:00,571 - INFO - Frame 1 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:00,737 - INFO - Hub1 transmitting frame 1 to PC2
+2025-03-26 06:52:00,758 - INFO - Frame 1 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:00,811 - INFO - PC2 transmitting frame 2 to Hub1
+2025-03-26 06:52:00,832 - WARNING - Collision detected during PC2's transmission of frame 2
+2025-03-26 06:52:00,832 - INFO - PC2 backing off for 0.048s after collision
+2025-03-26 06:52:00,881 - INFO - PC2 transmitting frame 2 to Hub1
+2025-03-26 06:52:00,902 - INFO - Frame 2 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:01,018 - INFO - Hub1 transmitting frame 2 to PC2
+2025-03-26 06:52:01,038 - WARNING - Collision detected during Hub1's transmission of frame 2
+2025-03-26 06:52:01,038 - INFO - Hub1 backing off for 0.018s after collision
+2025-03-26 06:52:01,057 - INFO - Hub1 transmitting frame 2 to PC2
+2025-03-26 06:52:01,078 - INFO - Frame 2 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:01,135 - INFO - Hub1 transmitting frame 0 to PC2
+2025-03-26 06:52:01,155 - INFO - Frame 0 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:01,181 - INFO - PC2 transmitting frame 3 to Hub1
+2025-03-26 06:52:01,202 - WARNING - Error introduced in frame 3
+2025-03-26 06:52:01,202 - INFO - Frame 3 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:01,265 - INFO - Hub1 transmitting frame 1 to PC2
+2025-03-26 06:52:01,266 - INFO - Hub1 transmitting frame 3 to PC2
+2025-03-26 06:52:01,286 - INFO - Frame 1 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:01,287 - WARNING - Collision detected during Hub1's transmission of frame 3
+2025-03-26 06:52:01,287 - INFO - Hub1 backing off for 0.023s after collision
+2025-03-26 06:52:01,311 - INFO - Hub1 transmitting frame 3 to PC2
+2025-03-26 06:52:01,331 - INFO - Frame 3 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:01,374 - INFO - Hub1 transmitting frame 2 to PC2
+2025-03-26 06:52:01,396 - INFO - Frame 2 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:01,424 - INFO - PC2 transmitting frame 4 to Hub1
+2025-03-26 06:52:01,445 - WARNING - Error introduced in frame 4
+2025-03-26 06:52:01,446 - INFO - Frame 4 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:01,449 - INFO - Hub1 transmitting frame 3 to PC2
+2025-03-26 06:52:01,470 - INFO - Frame 3 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:01,523 - INFO - Hub1 transmitting frame 4 to PC2
+2025-03-26 06:52:01,545 - INFO - Frame 4 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:01,560 - INFO - Medium is busy when Hub1 tries to send frame 4
+2025-03-26 06:52:01,597 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:01,611 - INFO - Medium is busy when Hub1 tries to send frame 4
+2025-03-26 06:52:01,618 - WARNING - Error introduced in frame 5
+2025-03-26 06:52:01,618 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:01,662 - INFO - Hub1 transmitting frame 4 to PC2
+2025-03-26 06:52:01,683 - INFO - Frame 4 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:01,722 - INFO - Medium is busy when Hub1 tries to send frame 6
+2025-03-26 06:52:01,773 - INFO - Medium is busy when Hub1 tries to send frame 6
+2025-03-26 06:52:01,787 - INFO - PC2 transmitting frame 5 to Hub1
+2025-03-26 06:52:01,808 - WARNING - Error introduced in frame 5
+2025-03-26 06:52:01,808 - INFO - Frame 5 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:01,824 - INFO - Hub1 transmitting frame 6 to PC2
+2025-03-26 06:52:01,845 - INFO - Frame 6 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:01,898 - INFO - Medium is busy when Hub1 tries to send frame 7
+2025-03-26 06:52:01,949 - INFO - Medium is busy when Hub1 tries to send frame 7
+2025-03-26 06:52:01,974 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:01,995 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,000 - INFO - Hub1 transmitting frame 7 to PC2
+2025-03-26 06:52:02,021 - INFO - Frame 7 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,075 - INFO - Hub1 transmitting frame 8 to PC2
+2025-03-26 06:52:02,095 - INFO - Frame 8 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,099 - INFO - Medium is busy when PC2 tries to send frame 6
+2025-03-26 06:52:02,134 - INFO - Hub1 transmitting frame 0 to PC2
+2025-03-26 06:52:02,149 - INFO - Hub1 transmitting frame 9 to PC2
+2025-03-26 06:52:02,150 - INFO - PC2 transmitting frame 6 to Hub1
+2025-03-26 06:52:02,155 - WARNING - Collision detected during Hub1's transmission of frame 0
+2025-03-26 06:52:02,155 - INFO - Hub1 backing off for 0.036s after collision
+2025-03-26 06:52:02,170 - WARNING - Error introduced in frame 9
+2025-03-26 06:52:02,170 - INFO - Frame 9 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,170 - INFO - Frame 6 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:02,192 - INFO - Hub1 transmitting frame 0 to PC2
+2025-03-26 06:52:02,213 - INFO - Frame 0 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,223 - INFO - Hub1 transmitting frame 10 to PC2
+2025-03-26 06:52:02,236 - INFO - Medium is busy when PC2 tries to send frame 0
+2025-03-26 06:52:02,244 - WARNING - Error introduced in frame 10
+2025-03-26 06:52:02,244 - INFO - Frame 10 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,286 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:02,287 - INFO - PC2 transmitting frame 0 to Hub1
+2025-03-26 06:52:02,297 - INFO - Hub1 transmitting frame 11 to PC2
+2025-03-26 06:52:02,307 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,308 - INFO - Frame 0 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:02,318 - WARNING - Error introduced in frame 11
+2025-03-26 06:52:02,318 - INFO - Frame 11 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,412 - INFO - Medium is busy when PC2 tries to send frame 7
+2025-03-26 06:52:02,423 - INFO - Hub1 transmitting frame 12 to PC2
+2025-03-26 06:52:02,443 - WARNING - Error introduced in frame 12
+2025-03-26 06:52:02,443 - INFO - Frame 12 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,454 - INFO - Hub1 transmitting frame 1 to PC2
+2025-03-26 06:52:02,463 - INFO - PC2 transmitting frame 7 to Hub1
+2025-03-26 06:52:02,475 - INFO - Frame 1 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,484 - INFO - Frame 7 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:02,496 - INFO - Hub1 transmitting frame 13 to PC2
+2025-03-26 06:52:02,517 - INFO - Frame 13 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,549 - INFO - PC2 transmitting frame 1 to Hub1
+2025-03-26 06:52:02,549 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:02,570 - INFO - Frame 1 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:02,571 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,572 - INFO - Hub1 transmitting frame 14 to PC2
+2025-03-26 06:52:02,593 - INFO - Frame 14 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,625 - INFO - PC2 transmitting frame 8 to Hub1
+2025-03-26 06:52:02,646 - INFO - Frame 8 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:02,648 - INFO - Hub1 transmitting frame 15 to PC2
+2025-03-26 06:52:02,669 - WARNING - Error introduced in frame 15
+2025-03-26 06:52:02,669 - INFO - Frame 15 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,711 - INFO - Medium is busy when Hub1 tries to send frame 5
+2025-03-26 06:52:02,763 - INFO - Medium is busy when Hub1 tries to send frame 5
+2025-03-26 06:52:02,781 - INFO - Hub1 transmitting frame 2 to PC2
+2025-03-26 06:52:02,801 - WARNING - Collision detected during Hub1's transmission of frame 2
+2025-03-26 06:52:02,801 - INFO - Hub1 backing off for 0.040s after collision
+2025-03-26 06:52:02,813 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:02,834 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,842 - INFO - Hub1 transmitting frame 2 to PC2
+2025-03-26 06:52:02,863 - INFO - Frame 2 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:02,885 - INFO - PC2 transmitting frame 2 to Hub1
+2025-03-26 06:52:02,906 - INFO - Frame 2 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:02,925 - INFO - PC2 transmitting frame 9 to Hub1
+2025-03-26 06:52:02,946 - INFO - Frame 9 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:02,969 - INFO - Hub1 transmitting frame 16 to PC2
+2025-03-26 06:52:02,991 - WARNING - Error introduced in frame 16
+2025-03-26 06:52:02,991 - INFO - Frame 16 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:03,052 - INFO - Hub1 transmitting frame 3 to PC2
+2025-03-26 06:52:03,073 - INFO - Frame 3 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:03,094 - INFO - PC2 transmitting frame 3 to Hub1
+2025-03-26 06:52:03,096 - INFO - Medium is busy when Hub1 tries to send frame 5
+2025-03-26 06:52:03,116 - INFO - Frame 3 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:03,147 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:03,168 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:03,259 - INFO - Hub1 transmitting frame 4 to PC2
+2025-03-26 06:52:03,280 - INFO - Frame 4 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:03,301 - INFO - PC2 transmitting frame 4 to Hub1
+2025-03-26 06:52:03,323 - INFO - Frame 4 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:03,339 - INFO - PC2 transmitting frame 10 to Hub1
+2025-03-26 06:52:03,360 - WARNING - Error introduced in frame 10
+2025-03-26 06:52:03,360 - INFO - Frame 10 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:03,417 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:03,438 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:03,502 - INFO - PC2 transmitting frame 5 to Hub1
+2025-03-26 06:52:03,523 - INFO - Frame 5 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:03,618 - INFO - Medium is busy when Hub1 tries to send frame 6
+2025-03-26 06:52:03,670 - INFO - Hub1 transmitting frame 6 to PC2
+2025-03-26 06:52:03,676 - INFO - Medium is busy when Hub1 tries to send frame 5
+2025-03-26 06:52:03,690 - INFO - Frame 6 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:03,711 - INFO - Medium is busy when PC2 tries to send frame 6
+2025-03-26 06:52:03,727 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:03,748 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:03,762 - INFO - Medium is busy when PC2 tries to send frame 6
+2025-03-26 06:52:03,801 - INFO - PC2 transmitting frame 11 to Hub1
+2025-03-26 06:52:03,813 - INFO - PC2 transmitting frame 6 to Hub1
+2025-03-26 06:52:03,823 - INFO - Frame 11 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:03,834 - INFO - Frame 6 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:03,886 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:03,907 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:03,980 - INFO - Hub1 transmitting frame 7 to PC2
+2025-03-26 06:52:04,001 - WARNING - Error introduced in frame 7
+2025-03-26 06:52:04,001 - INFO - Frame 7 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:04,012 - INFO - PC2 transmitting frame 12 to Hub1
+2025-03-26 06:52:04,023 - INFO - PC2 transmitting frame 6 to Hub1
+2025-03-26 06:52:04,032 - INFO - Frame 12 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:04,044 - INFO - Frame 6 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:04,096 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:04,117 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:04,169 - INFO - PC2 transmitting frame 13 to Hub1
+2025-03-26 06:52:04,190 - INFO - Frame 13 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:04,342 - INFO - Hub1 transmitting frame 8 to PC2
+2025-03-26 06:52:04,356 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:04,363 - WARNING - Error introduced in frame 8
+2025-03-26 06:52:04,363 - INFO - Frame 8 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:04,377 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:04,430 - INFO - PC2 transmitting frame 14 to Hub1
+2025-03-26 06:52:04,435 - INFO - PC2 transmitting frame 6 to Hub1
+2025-03-26 06:52:04,451 - INFO - Frame 14 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:04,457 - INFO - Frame 6 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:04,563 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:04,585 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:04,642 - INFO - Medium is busy when Hub1 tries to send frame 9
+2025-03-26 06:52:04,671 - INFO - Medium is busy when PC2 tries to send frame 15
+2025-03-26 06:52:04,693 - INFO - Hub1 transmitting frame 9 to PC2
+2025-03-26 06:52:04,714 - WARNING - Collision detected during Hub1's transmission of frame 9
+2025-03-26 06:52:04,714 - INFO - Hub1 backing off for 0.093s after collision
+2025-03-26 06:52:04,722 - INFO - PC2 transmitting frame 15 to Hub1
+2025-03-26 06:52:04,743 - INFO - Frame 15 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:04,807 - INFO - Hub1 transmitting frame 9 to PC2
+2025-03-26 06:52:04,828 - INFO - Frame 9 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:04,849 - INFO - PC2 transmitting frame 6 to Hub1
+2025-03-26 06:52:04,870 - INFO - Frame 6 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:05,016 - INFO - Medium is busy when Hub1 tries to send frame 5
+2025-03-26 06:52:05,067 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:05,088 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:05,124 - INFO - Medium is busy when Hub1 tries to send frame 10
+2025-03-26 06:52:05,175 - INFO - Hub1 transmitting frame 10 to PC2
+2025-03-26 06:52:05,192 - INFO - PC2 transmitting frame 16 to Hub1
+2025-03-26 06:52:05,196 - INFO - Frame 10 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:05,213 - WARNING - Error introduced in frame 16
+2025-03-26 06:52:05,213 - INFO - Frame 16 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:05,218 - INFO - PC2 transmitting frame 6 to Hub1
+2025-03-26 06:52:05,239 - INFO - Frame 6 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:05,385 - INFO - Medium is busy when Hub1 tries to send frame 11
+2025-03-26 06:52:05,398 - INFO - Hub1 transmitting frame 5 to PC2
+2025-03-26 06:52:05,419 - INFO - Frame 5 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:05,436 - INFO - Hub1 transmitting frame 11 to PC2
+2025-03-26 06:52:05,456 - WARNING - Collision detected during Hub1's transmission of frame 11
+2025-03-26 06:52:05,456 - INFO - Hub1 backing off for 0.022s after collision
+2025-03-26 06:52:05,479 - INFO - Hub1 transmitting frame 11 to PC2
+2025-03-26 06:52:05,500 - INFO - Frame 11 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:05,522 - INFO - Medium is busy when PC2 tries to send frame 6
+2025-03-26 06:52:05,573 - INFO - Medium is busy when PC2 tries to send frame 6
+2025-03-26 06:52:05,624 - INFO - PC2 transmitting frame 6 to Hub1
+2025-03-26 06:52:05,645 - INFO - Frame 6 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:05,942 - INFO - Medium is busy when Hub1 tries to send frame 12
+2025-03-26 06:52:05,993 - INFO - Hub1 transmitting frame 12 to PC2
+2025-03-26 06:52:06,014 - INFO - Frame 12 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:06,037 - INFO - PC2 transmitting frame 6 to Hub1
+2025-03-26 06:52:06,058 - INFO - Frame 6 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:06,204 - INFO - Hub1 transmitting frame 13 to PC2
+2025-03-26 06:52:06,226 - INFO - Frame 13 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:06,303 - INFO - PC2 transmitting frame 6 to Hub1
+2025-03-26 06:52:06,324 - INFO - Frame 6 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:06,420 - INFO - Hub1 transmitting frame 14 to PC2
+2025-03-26 06:52:06,441 - INFO - Frame 14 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:06,463 - INFO - PC2 transmitting frame 6 to Hub1
+2025-03-26 06:52:06,484 - INFO - Frame 6 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:06,630 - INFO - Medium is busy when Hub1 tries to send frame 15
+2025-03-26 06:52:06,681 - INFO - Medium is busy when Hub1 tries to send frame 15
+2025-03-26 06:52:06,732 - INFO - Hub1 transmitting frame 15 to PC2
+2025-03-26 06:52:06,753 - WARNING - Error introduced in frame 15
+2025-03-26 06:52:06,753 - INFO - Frame 15 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:06,775 - INFO - PC2 transmitting frame 6 to Hub1
+2025-03-26 06:52:06,796 - INFO - Frame 6 successfully transmitted from PC2 to Hub1
+2025-03-26 06:52:06,992 - INFO - Medium is busy when Hub1 tries to send frame 16
+2025-03-26 06:52:07,043 - INFO - Hub1 transmitting frame 16 to PC2
+2025-03-26 06:52:07,064 - INFO - Frame 16 successfully transmitted from Hub1 to PC2
+2025-03-26 06:52:07,085 - INFO - PC2 transmitting frame 6 to Hub1
+2025-03-26 06:52:07,106 - INFO - Frame 6 successfully transmitted from PC2 to Hub1

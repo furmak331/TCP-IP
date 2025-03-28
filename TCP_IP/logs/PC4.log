@@ -1,0 +1,69 @@
+2025-03-26 06:52:00,103 - INFO - Device PC4 created with MAC d6:ad:55:e8:c7:47
+2025-03-26 06:52:00,107 - INFO - Connected to link Link4
+2025-03-26 06:52:00,402 - INFO - Received valid frame
+2025-03-26 06:52:00,402 - INFO - Message size received: 16 characters
+2025-03-26 06:52:00,403 - INFO - Sending ACK 1 (expecting frame 1 next)
+2025-03-26 06:52:00,613 - INFO - Received valid frame
+2025-03-26 06:52:00,613 - INFO - Sending ACK 2 (expecting frame 2 next)
+2025-03-26 06:52:00,995 - INFO - Received valid frame
+2025-03-26 06:52:00,995 - INFO - Sending ACK 3 (expecting frame 3 next)
+2025-03-26 06:52:01,112 - INFO - Sending message: Message from PC4
+2025-03-26 06:52:01,113 - INFO - Sending Frame[DATA:0] d6:ad:...-->f1:c1:...: __SIZE__16
+2025-03-26 06:52:01,243 - INFO - Sending Frame[DATA:1] d6:ad:...-->f1:c1:...: M
+2025-03-26 06:52:01,245 - INFO - Received valid frame
+2025-03-26 06:52:01,245 - INFO - Sending ACK 4 (expecting frame 4 next)
+2025-03-26 06:52:01,353 - INFO - Sending Frame[DATA:2] d6:ad:...-->f1:c1:...: e
+2025-03-26 06:52:01,428 - INFO - Sending Frame[DATA:3] d6:ad:...-->f1:c1:...: s
+2025-03-26 06:52:01,502 - INFO - Sending Frame[DATA:4] d6:ad:...-->f1:c1:...: s
+2025-03-26 06:52:01,538 - INFO - Received valid frame
+2025-03-26 06:52:01,538 - INFO - Sending ACK 5 (expecting frame 5 next)
+2025-03-26 06:52:01,576 - INFO - Sending Frame[DATA:5] d6:ad:...-->f1:c1:...: a
+2025-03-26 06:52:01,701 - INFO - Sending Frame[DATA:6] d6:ad:...-->f1:c1:...: g
+2025-03-26 06:52:01,877 - INFO - Sending Frame[DATA:7] d6:ad:...-->f1:c1:...: e
+2025-03-26 06:52:01,902 - INFO - Received valid frame
+2025-03-26 06:52:01,902 - INFO - Sending ACK 6 (expecting frame 6 next)
+2025-03-26 06:52:02,053 - INFO - Sending Frame[DATA:8] d6:ad:...-->f1:c1:...:  
+2025-03-26 06:52:02,127 - INFO - Sending Frame[DATA:9] d6:ad:...-->f1:c1:...: f
+2025-03-26 06:52:02,202 - INFO - Sending Frame[DATA:10] d6:ad:...-->f1:c1:...: r
+2025-03-26 06:52:02,214 - WARNING - Received corrupted frame 6 (checksum mismatch)
+2025-03-26 06:52:02,214 - INFO - Sending duplicate ACK 6 due to corrupted frame
+2025-03-26 06:52:02,276 - INFO - Sending Frame[DATA:11] d6:ad:...-->f1:c1:...: o
+2025-03-26 06:52:02,350 - INFO - Sending Frame[DATA:12] d6:ad:...-->f1:c1:...: m
+2025-03-26 06:52:02,475 - INFO - Sending Frame[DATA:13] d6:ad:...-->f1:c1:...:  
+2025-03-26 06:52:02,526 - INFO - Received valid frame
+2025-03-26 06:52:02,526 - WARNING - Received out-of-order frame 7, expected 6
+2025-03-26 06:52:02,526 - INFO - Buffered frame 7
+2025-03-26 06:52:02,526 - INFO - Sending duplicate ACK 6 (still expecting frame 6)
+2025-03-26 06:52:02,549 - INFO - Sending Frame[DATA:14] d6:ad:...-->f1:c1:...: P
+2025-03-26 06:52:02,626 - INFO - Sending Frame[DATA:15] d6:ad:...-->f1:c1:...: C
+2025-03-26 06:52:02,690 - WARNING - Received corrupted frame 8 (checksum mismatch)
+2025-03-26 06:52:02,690 - INFO - Sending duplicate ACK 6 due to corrupted frame
+2025-03-26 06:52:02,847 - INFO - Sending Frame[DATA:16] d6:ad:...-->f1:c1:...: 4
+2025-03-26 06:52:03,024 - INFO - Received valid frame
+2025-03-26 06:52:03,024 - WARNING - Received out-of-order frame 9, expected 6
+2025-03-26 06:52:03,024 - INFO - Buffered frame 9
+2025-03-26 06:52:03,025 - INFO - Sending duplicate ACK 6 (still expecting frame 6)
+2025-03-26 06:52:03,655 - WARNING - Received corrupted frame 10 (checksum mismatch)
+2025-03-26 06:52:03,655 - INFO - Sending duplicate ACK 6 due to corrupted frame
+2025-03-26 06:52:03,865 - INFO - Received valid frame
+2025-03-26 06:52:03,865 - WARNING - Received out-of-order frame 11, expected 6
+2025-03-26 06:52:03,865 - INFO - Buffered frame 11
+2025-03-26 06:52:03,865 - INFO - Sending duplicate ACK 6 (still expecting frame 6)
+2025-03-26 06:52:04,074 - INFO - Received valid frame
+2025-03-26 06:52:04,074 - WARNING - Received out-of-order frame 12, expected 6
+2025-03-26 06:52:04,074 - INFO - Buffered frame 12
+2025-03-26 06:52:04,075 - INFO - Sending duplicate ACK 6 (still expecting frame 6)
+2025-03-26 06:52:04,232 - INFO - Received valid frame
+2025-03-26 06:52:04,232 - WARNING - Received out-of-order frame 13, expected 6
+2025-03-26 06:52:04,232 - INFO - Buffered frame 13
+2025-03-26 06:52:04,232 - INFO - Sending duplicate ACK 6 (still expecting frame 6)
+2025-03-26 06:52:04,541 - INFO - Received valid frame
+2025-03-26 06:52:04,541 - WARNING - Received out-of-order frame 14, expected 6
+2025-03-26 06:52:04,541 - INFO - Buffered frame 14
+2025-03-26 06:52:04,541 - INFO - Sending duplicate ACK 6 (still expecting frame 6)
+2025-03-26 06:52:04,893 - INFO - Received valid frame
+2025-03-26 06:52:04,893 - WARNING - Received out-of-order frame 15, expected 6
+2025-03-26 06:52:04,893 - INFO - Buffered frame 15
+2025-03-26 06:52:04,893 - INFO - Sending duplicate ACK 6 (still expecting frame 6)
+2025-03-26 06:52:05,255 - WARNING - Received corrupted frame 16 (checksum mismatch)
+2025-03-26 06:52:05,255 - INFO - Sending duplicate ACK 6 due to corrupted frame
