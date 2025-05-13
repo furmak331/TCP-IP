@@ -20,6 +20,8 @@ class Router(Device):
         else:
             self.logger.warning(f"Interface with IP address {ip_address} not found")
     
+
+
     def add_route(self, network_prefix, interface):
         """Add a route to the routing table."""
         self.routing_table[network_prefix] = interface
@@ -36,5 +38,3 @@ class Router(Device):
     def forward_packet(self, packet, source_interface):
         """Forward a packet to the appropriate next hop."""
         # Check if the packet is for this router
-
-
