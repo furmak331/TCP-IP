@@ -1,0 +1,18 @@
+2025-05-17 17:00:16,274 - INFO - h1 transmitting frame 0 to d2
+2025-05-17 17:00:16,295 - INFO - Frame 0 successfully transmitted from h1 to d2
+2025-05-17 17:00:16,295 - INFO - d2 transmitting frame 0 to h1
+2025-05-17 17:00:16,316 - INFO - Frame 0 successfully transmitted from d2 to h1
+2025-05-17 17:00:16,461 - INFO - h1 transmitting frame 1 to d2
+2025-05-17 17:00:16,482 - INFO - Frame 1 successfully transmitted from h1 to d2
+2025-05-17 17:00:16,482 - INFO - d2 transmitting frame 1 to h1
+2025-05-17 17:00:16,504 - WARNING - Collision detected during d2's transmission of frame 1
+2025-05-17 17:00:16,504 - INFO - d2 backing off for 0.035s after collision
+2025-05-17 17:00:16,540 - INFO - Medium is busy when d2 tries to send frame 1
+2025-05-17 17:00:16,590 - INFO - d2 transmitting frame 1 to h1
+2025-05-17 17:00:16,611 - INFO - Frame 1 successfully transmitted from d2 to h1
+2025-05-17 17:00:16,768 - INFO - Medium is busy when h1 tries to send frame 2
+2025-05-17 17:00:16,819 - INFO - h1 transmitting frame 2 to d2
+2025-05-17 17:00:16,840 - INFO - Frame 2 successfully transmitted from h1 to d2
+2025-05-17 17:00:16,840 - INFO - Medium is busy when d2 tries to send frame 2
+2025-05-17 17:00:16,890 - INFO - d2 transmitting frame 2 to h1
+2025-05-17 17:00:16,911 - INFO - Frame 2 successfully transmitted from d2 to h1
