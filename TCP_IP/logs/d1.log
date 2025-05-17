@@ -1,0 +1,14 @@
+2025-05-17 16:57:27,583 - INFO - Device d1 created with MAC a6:71:c9:74:89:7f
+2025-05-17 16:58:42,598 - ERROR - Cannot send message: No connections available
+2025-05-17 16:58:59,759 - ERROR - Cannot send message: No connections available
+2025-05-17 16:59:28,836 - INFO - Connected to link l1
+2025-05-17 17:00:16,252 - INFO - Sending message: hi
+2025-05-17 17:00:16,252 - INFO - Sending Frame[DATA:0] a6:71:...-->38:c9:...: __SIZE__2
+2025-05-17 17:00:16,337 - INFO - Received valid frame
+2025-05-17 17:00:16,337 - INFO - Received ACK 1 (frames up to 0 acknowledged)
+2025-05-17 17:00:16,390 - INFO - Sending Frame[DATA:1] a6:71:...-->38:c9:...: h
+2025-05-17 17:00:16,632 - INFO - Received valid frame
+2025-05-17 17:00:16,632 - INFO - Received ACK 2 (frames up to 1 acknowledged)
+2025-05-17 17:00:16,685 - INFO - Sending Frame[DATA:2] a6:71:...-->38:c9:...: i
+2025-05-17 17:00:16,932 - INFO - Received valid frame
+2025-05-17 17:00:16,932 - INFO - Received ACK 3 (frames up to 2 acknowledged)

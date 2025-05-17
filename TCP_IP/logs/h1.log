@@ -1,0 +1,12 @@
+2025-05-17 16:57:22,065 - INFO - Device h1 created with MAC 95:69:56:0d:d4:4f
+2025-05-17 16:57:58,576 - INFO - Connected to link d1
+2025-05-17 16:58:17,482 - INFO - Connected to link d3
+2025-05-17 16:59:28,837 - INFO - Connected to link l1
+2025-05-17 16:59:36,892 - INFO - Connected to link l2
+2025-05-17 16:59:47,532 - INFO - Connected to link l3
+2025-05-17 17:00:16,274 - INFO - Hub broadcasting: Frame[DATA:0] a6:71:...-->38:c9:...: __SIZE__2
+2025-05-17 17:00:16,316 - INFO - Hub broadcasting: Frame[ACK:0] 38:c9:...-->a6:71:...: ACK-1
+2025-05-17 17:00:16,461 - INFO - Hub broadcasting: Frame[DATA:1] a6:71:...-->38:c9:...: h
+2025-05-17 17:00:16,611 - INFO - Hub broadcasting: Frame[ACK:1] 38:c9:...-->a6:71:...: ACK-2
+2025-05-17 17:00:16,767 - INFO - Hub broadcasting: Frame[DATA:2] a6:71:...-->38:c9:...: i
+2025-05-17 17:00:16,911 - INFO - Hub broadcasting: Frame[ACK:2] 38:c9:...-->a6:71:...: ACK-3

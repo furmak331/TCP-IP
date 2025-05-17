@@ -1,0 +1,14 @@
+2025-05-17 17:00:16,337 - INFO - h1 transmitting frame 0 to d3
+2025-05-17 17:00:16,358 - INFO - Frame 0 successfully transmitted from h1 to d3
+2025-05-17 17:00:16,358 - INFO - h1 transmitting frame 0 to d3
+2025-05-17 17:00:16,379 - WARNING - Error introduced in frame 0
+2025-05-17 17:00:16,379 - INFO - Frame 0 successfully transmitted from h1 to d3
+2025-05-17 17:00:16,633 - INFO - h1 transmitting frame 1 to d3
+2025-05-17 17:00:16,654 - INFO - Frame 1 successfully transmitted from h1 to d3
+2025-05-17 17:00:16,654 - INFO - h1 transmitting frame 1 to d3
+2025-05-17 17:00:16,675 - INFO - Frame 1 successfully transmitted from h1 to d3
+2025-05-17 17:00:16,932 - INFO - Medium is busy when h1 tries to send frame 2
+2025-05-17 17:00:16,983 - INFO - h1 transmitting frame 2 to d3
+2025-05-17 17:00:17,004 - INFO - Frame 2 successfully transmitted from h1 to d3
+2025-05-17 17:00:17,005 - INFO - h1 transmitting frame 2 to d3
+2025-05-17 17:00:17,026 - INFO - Frame 2 successfully transmitted from h1 to d3

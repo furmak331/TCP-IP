@@ -8,6 +8,7 @@ from TCP_IP.physical.hub import Hub
 from TCP_IP.physical.link import Link
 from TCP_IP.datalink.bridge import Bridge
 from TCP_IP.datalink.switch import Switch
+from TCP_IP.network.router import Router
 
 class Network:
     """Manages the network topology and message flow."""
@@ -18,6 +19,7 @@ class Network:
         self.hubs = {}     # name -> Hub
         self.bridges = {}  # name -> Bridge
         self.switches = {} # name -> Switch
+        self.routers = {}  # Add routers dictionary
         self.links = {}    # name -> Link
         self.logger = setup_logger(f"Network_{name}", f"network_{name}")
     
@@ -65,6 +67,17 @@ class Network:
         self.logger.info(f"Added switch: {name}")
         return switch
     
+    def add_router(self, name):
+        """Add a new router to the network."""
+        if name in self.devices or name in self.hubs or name in self.bridges or name in self.switches or name in self.routers:
+            self.logger.error(f"A device/router with name '{name}' already exists")
+            return None
+        
+        router = Router(name)
+        self.routers[name] = router
+        self.logger.info(f"Added router: {name}")
+        return router
+    
     def add_link(self, name, endpoint1_name=None, endpoint2_name=None):
         """Add a new link between two endpoints (devices or hubs)."""
         if name in self.links:
@@ -99,18 +112,29 @@ class Network:
     
     def remove_device(self, name):
         """Remove a device from the network."""
-        if name not in self.devices:
-            self.logger.error(f"Device '{name}' not found")
+        device_to_remove = self.get_device(name)
+
+        if not device_to_remove:
+            self.logger.error(f"Device/Router '{name}' not found")
             return False
-        
-        device = self.devices[name]
-        
+
         # Disconnect from all links
-        for link in device.connections.copy():
-            link.disconnect_endpoint(device)
-        
-        del self.devices[name]
-        self.logger.info(f"Removed device: {name}")
+        for link in device_to_remove.connections.copy():
+            link.disconnect_endpoint(device_to_remove)
+
+        # Remove from the correct dictionary
+        if name in self.devices:
+            del self.devices[name]
+        elif name in self.hubs:
+            del self.hubs[name]
+        elif name in self.bridges:
+            del self.bridges[name]
+        elif name in self.switches:
+            del self.switches[name]
+        elif name in self.routers:
+            del self.routers[name]
+
+        self.logger.info(f"Removed device/router: {name}")
         return True
     
     def remove_hub(self, name):
@@ -229,7 +253,29 @@ class Network:
         
         print("\nDevices:")
         for name, device in self.devices.items():
-            print(f"  {name} (MAC: {device.mac_address})")
+            print(f"  {name} (MAC: {device.mac_address}, IP: {device.ip_address.address if device.ip_address else 'None'})")
+            if device.arp_table:
+                 print("    ARP Table:")
+                 for ip, mac in device.arp_table.items():
+                     print(f"      {ip} -> {mac}")
+        
+        print("\nRouters:")
+        for name, router in self.routers.items():
+            print(f"  {name} (MAC: {router.mac_address})")
+            if router.interfaces:
+                 print("    Interfaces:")
+                 for interface in router.interfaces:
+                     print(f"      {interface.name}: {interface.ip_address}, MAC: {interface.mac_address}")
+            if router.routing_table:
+                 print("    Routing Table:")
+                 # Sort routes for consistent display (optional)
+                 sorted_routes = sorted(router.routing_table.items(), key=lambda item: item[0].prefixlen, reverse=True)
+                 for dest, (output_int, next_hop) in sorted_routes:
+                     print(f"      {dest} -> via {output_int.name}, next hop {next_hop.address if next_hop else 'direct'}")
+            if router.arp_table:
+                 print("    ARP Table:")
+                 for ip, mac in router.arp_table.items():
+                     print(f"      {ip} -> {mac}")
         
         print("\nHubs:")
         for name, hub in self.hubs.items():
@@ -265,4 +311,23 @@ class Network:
     
     def __str__(self):
         return (f"Network({self.name}, {len(self.devices)} devices, {len(self.hubs)} hubs, "
-                f"{len(self.bridges)} bridges, {len(self.switches)} switches, {len(self.links)} links)") 
+                f"{len(self.bridges)} bridges, {len(self.switches)} switches, {len(self.links)} links)")
+
+    def get_device(self, name):
+        """Get a device (including routers, hubs, etc.) by name."""
+        return (self.devices.get(name) or
+                self.hubs.get(name) or
+                self.bridges.get(name) or
+                self.switches.get(name) or
+                self.routers.get(name))
+
+    def send_packet(self, source_name, destination_ip_str, data, protocol=0):
+        """Send a packet from a source device to a target IP address."""
+        source = self.get_device(source_name)
+
+        if not source:
+            self.logger.error(f"Source device/router '{source_name}' not found")
+            return False
+
+        # Use the device's send_packet method
+        return source.send_packet(destination_ip_str, data, protocol) 

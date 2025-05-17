@@ -11,3 +11,16 @@
 2025-03-26 06:52:00,106 - INFO - Added link: Link2 connecting PC2 and Hub1
 2025-03-26 06:52:00,106 - INFO - Added link: Link3 connecting PC3 and Hub1
 2025-03-26 06:52:00,107 - INFO - Added link: Link4 connecting PC4 and Hub1
+2025-05-17 16:57:22,066 - INFO - Added hub: h1
+2025-05-17 16:57:27,583 - INFO - Added device: d1
+2025-05-17 16:57:32,345 - INFO - Added device: d2
+2025-05-17 16:57:44,906 - INFO - Added link: d1 connecting d2 and None
+2025-05-17 16:57:53,443 - INFO - Removed link: d1
+2025-05-17 16:57:58,576 - INFO - Added link: d1 connecting h1 and None
+2025-05-17 16:58:09,233 - ERROR - A link with name 'd1' already exists
+2025-05-17 16:58:12,722 - INFO - Added device: d3
+2025-05-17 16:58:17,482 - INFO - Added link: d3 connecting h1 and None
+2025-05-17 16:59:28,837 - INFO - Added link: l1 connecting d1 and h1
+2025-05-17 16:59:36,892 - INFO - Added link: l2 connecting d2 and h1
+2025-05-17 16:59:41,684 - ERROR - A link with name 'l2' already exists
+2025-05-17 16:59:47,532 - INFO - Added link: l3 connecting d3 and h1

@@ -1,0 +1,13 @@
+2025-05-17 16:57:32,345 - INFO - Device d2 created with MAC 38:c9:d2:14:8f:13
+2025-05-17 16:57:44,905 - INFO - Connected to link d1
+2025-05-17 16:57:53,443 - INFO - Disconnected from link d1
+2025-05-17 16:59:36,892 - INFO - Connected to link l2
+2025-05-17 17:00:16,295 - INFO - Received valid frame
+2025-05-17 17:00:16,295 - INFO - Message size received: 2 characters
+2025-05-17 17:00:16,295 - INFO - Sending ACK 1 (expecting frame 1 next)
+2025-05-17 17:00:16,482 - INFO - Received valid frame
+2025-05-17 17:00:16,482 - INFO - Sending ACK 2 (expecting frame 2 next)
+2025-05-17 17:00:16,840 - INFO - Received valid frame
+2025-05-17 17:00:16,840 - INFO - Sending ACK 3 (expecting frame 3 next)
+2025-05-17 17:00:17,005 - INFO - All 2 characters received, reassembling message
+2025-05-17 17:00:17,005 - INFO - Reassembled message from a6:71:c9:74:89:7f: 'hi'
