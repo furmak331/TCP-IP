@@ -4,8 +4,14 @@ Command-line interface for the TCP/IP Network Simulator.
 
 import time
 import threading
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 from TCP_IP.network import Network
 from TCP_IP.config import ERROR_INJECTION_RATE, CSMA_CD_SLOT_TIME, CSMA_CD_MAX_ATTEMPTS, BUSY_TIME_RANGE
+from TCP_IP.network.router import Router
+from TCP_IP.network.ip_address import IPAddress
+from TCP_IP.network.packet import Packet
 
 def interactive_cli():
     """Provide an interactive command-line interface for the network simulator."""
@@ -31,15 +37,22 @@ def interactive_cli():
             print("  add hub <name>              - Add a new hub")
             print("  add bridge <name>           - Add a new bridge")
             print("  add switch <name>           - Add a new switch")
+            print("  add router <name>           - Add a new router")
             print("  add link <name> [dev1] [dev2] - Add a new link between devices")
             print("  remove device <name>        - Remove a device")
             print("  remove hub <name>           - Remove a hub")
             print("  remove bridge <name>        - Remove a bridge")
             print("  remove switch <name>        - Remove a switch")
+            print("  remove router <name>        - Remove a router")
             print("  remove link <name>          - Remove a link")
             print("  connect <link> <endpoint>   - Connect an endpoint to a link")
             print("  disconnect <link> <endpoint> - Disconnect an endpoint from a link")
-            print("  send <source> <message> [target] - Send a message")
+            print("  assign ip <device> <ip_address> [subnet_mask] - Assign IP to a device")
+            print("  set gateway <device> <gateway_ip> - Set default gateway for a device")
+            print("  add route <router> <destination_cidr> <output_interface_ip> [next_hop_ip] - Add static route")
+            print("  remove route <router> <destination_cidr> - Remove static route")
+            print("  send message <source> <message> [target_mac] - Send a Data Link message")
+            print("  send packet <source> <destination_ip> <data> [protocol] - Send a Network Layer packet")
             print("  enable gbn <device> [window_size] - Enable Go-Back-N protocol")
             print("  display                     - Display network topology")
             print("  demo error                  - Demonstrate error control")
@@ -63,6 +76,9 @@ def interactive_cli():
             
             elif parts[1] == "switch":
                 network.add_switch(parts[2])
+            
+            elif parts[1] == "router":
+                network.add_router(parts[2])
             
             elif parts[1] == "link":
                 if len(parts) == 3:
@@ -92,6 +108,9 @@ def interactive_cli():
             elif parts[1] == "switch":
                 network.remove_switch(parts[2])
             
+            elif parts[1] == "router":
+                network.remove_device(parts[2])
+            
             elif parts[1] == "link":
                 network.remove_link(parts[2])
             
@@ -106,25 +125,24 @@ def interactive_cli():
             link_name = parts[1]
             endpoint_name = parts[2]
             
-            if link_name not in network.links:
+            link = network.links.get(link_name)
+            if not link:
                 print(f"Error: Link '{link_name}' not found")
                 continue
             
-            endpoint = (network.devices.get(endpoint_name) or 
-                        network.hubs.get(endpoint_name) or 
-                        network.bridges.get(endpoint_name) or 
-                        network.switches.get(endpoint_name))
-            
+            endpoint = network.get_device(endpoint_name)
             if not endpoint:
                 print(f"Error: Endpoint '{endpoint_name}' not found")
                 continue
             
-            link = network.links[link_name]
-            try:
+            if isinstance(endpoint, Router) and len(parts) >= 5 and parts[3] == "interface":
+                interface_ip_str = parts[4]
+                subnet_mask_str = parts[5] if len(parts) > 5 else "255.255.255.0"
+                endpoint.add_interface(interface_ip_str, subnet_mask_str, link)
+                print(f"Connected router {endpoint_name} interface {interface_ip_str} to link {link_name}")
+            else:
                 link.connect_endpoint(endpoint)
                 print(f"Connected {endpoint_name} to {link_name}")
-            except ValueError as e:
-                print(f"Error: {e}")
         
         elif parts[0] == "disconnect":
             if len(parts) < 3:
@@ -134,33 +152,125 @@ def interactive_cli():
             link_name = parts[1]
             endpoint_name = parts[2]
             
-            if link_name not in network.links:
+            link = network.links.get(link_name)
+            if not link:
                 print(f"Error: Link '{link_name}' not found")
                 continue
             
-            endpoint = (network.devices.get(endpoint_name) or 
-                        network.hubs.get(endpoint_name) or 
-                        network.bridges.get(endpoint_name) or 
-                        network.switches.get(endpoint_name))
-            
+            endpoint = network.get_device(endpoint_name)
             if not endpoint:
                 print(f"Error: Endpoint '{endpoint_name}' not found")
                 continue
             
-            link = network.links[link_name]
-            link.disconnect_endpoint(endpoint)
-            print(f"Disconnected {endpoint_name} from {link_name}")
+            if isinstance(endpoint, Router) and len(parts) >= 4 and parts[3] == "interface":
+                interface_ip_str = parts[4] if len(parts) > 4 else None
+                if interface_ip_str:
+                    endpoint.remove_interface(interface_ip_str)
+                    print(f"Disconnected router {endpoint_name} interface {interface_ip_str} from link {link_name}")
+                else:
+                    print("Error: Specify the IP address of the interface to disconnect.")
+            else:
+                link.disconnect_endpoint(endpoint)
+                print(f"Disconnected {endpoint_name} from {link_name}")
+        
+        elif parts[0] == "assign" and parts[1] == "ip":
+            if len(parts) < 4:
+                print("Error: Insufficient arguments. Usage: assign ip <device> <ip_address> [subnet_mask]")
+                continue
+            device_name = parts[2]
+            ip_address_str = parts[3]
+            subnet_mask_str = parts[4] if len(parts) > 4 else "255.255.255.0"
+            
+            device = network.get_device(device_name)
+            if not device:
+                print(f"Error: Device '{device_name}' not found")
+                continue
+            
+            if device.assign_ip_address(ip_address_str, subnet_mask_str):
+                print(f"Assigned IP {ip_address_str}/{subnet_mask_str} to {device_name}")
+            else:
+                print(f"Failed to assign IP to {device_name}")
+        
+        elif parts[0] == "set" and parts[1] == "gateway":
+            if len(parts) < 4:
+                print("Error: Insufficient arguments. Usage: set gateway <device> <gateway_ip>")
+                continue
+            device_name = parts[2]
+            gateway_ip_str = parts[3]
+            
+            device = network.get_device(device_name)
+            if not device:
+                print(f"Error: Device '{device_name}' not found")
+                continue
+            
+            if hasattr(device, 'set_default_gateway'):
+                device.set_default_gateway(gateway_ip_str)
+                print(f"Set default gateway for {device_name} to {gateway_ip_str}")
+            else:
+                print(f"Error: Device '{device_name}' does not support setting a default gateway.")
+        
+        elif parts[0] == "add" and parts[1] == "route":
+            if len(parts) < 5:
+                print("Error: Insufficient arguments. Usage: add route <router> <destination_cidr> <output_interface_ip> [next_hop_ip]")
+                continue
+            router_name = parts[2]
+            destination_cidr = parts[3]
+            output_interface_ip_str = parts[4]
+            next_hop_ip_str = parts[5] if len(parts) > 5 else None
+            
+            router = network.routers.get(router_name)
+            if not router:
+                print(f"Error: Router '{router_name}' not found")
+                continue
+            
+            router.add_route(destination_cidr, output_interface_ip_str, next_hop_ip_str)
+        
+        elif parts[0] == "remove" and parts[1] == "route":
+            if len(parts) < 4:
+                print("Error: Insufficient arguments. Usage: remove route <router> <destination_cidr>")
+                continue
+            router_name = parts[2]
+            destination_cidr = parts[3]
+            
+            router = network.routers.get(router_name)
+            if not router:
+                print(f"Error: Router '{router_name}' not found")
+                continue
+            
+            router.remove_route(destination_cidr)
         
         elif parts[0] == "send":
             if len(parts) < 3:
                 print("Error: Insufficient arguments")
                 continue
             
-            source_name = parts[1]
-            message = parts[2]
-            target_name = parts[3] if len(parts) > 3 else None
+            if parts[1] == "message":
+                source_name = parts[2]
+                message = parts[3]
+                target_name = parts[4] if len(parts) > 4 else None
+                target_mac = None
+                if target_name:
+                    target_device = network.get_device(target_name)
+                    if target_device:
+                        target_mac = str(target_device.mac_address)
+                    else:
+                        print(f"Error: Target device '{target_name}' not found for message send.")
+                        continue
+                network.send_message(source_name, message, target_mac)
             
-            network.send_message(source_name, message, target_name)
+            elif parts[1] == "packet":
+                if len(parts) < 4:
+                    print("Error: Insufficient arguments. Usage: send packet <source> <destination_ip> <data> [protocol]")
+                    continue
+                source_name = parts[2]
+                destination_ip_str = parts[3]
+                data = parts[4]
+                protocol = int(parts[5]) if len(parts) > 5 else 0
+                
+                network.send_packet(source_name, destination_ip_str, data, protocol)
+            
+            else:
+                print(f"Error: Unknown send type '{parts[1]}'")
         
         elif parts[0] == "enable" and parts[1] == "gbn":
             if len(parts) < 3:
@@ -178,16 +288,14 @@ def interactive_cli():
         elif parts[0] == "display":
             network.display_network()
         
-        elif parts[0] == "demo" and len(parts) > 1:
-            if parts[1] == "error":
-                demonstrate_error_control(network)
-            elif parts[1] == "csmacd":
-                demonstrate_csma_cd(network)
-            else:
-                print(f"Error: Unknown demo type '{parts[1]}'")
+        elif parts[0] == "demo" and parts[1] == "error":
+            demonstrate_error_control()
+        
+        elif parts[0] == "demo" and parts[1] == "csmacd":
+            demonstrate_csma_cd()
         
         else:
-            print(f"Error: Unknown command '{parts[0]}'")
+            print(f"Error: Unknown command '{command}'")
 
 
 def demonstrate_error_control(network=None):

@@ -11,6 +11,8 @@ class FrameType(Enum):
     DATA = 1
     ACK = 2
     NAK = 3
+    ARP_REQUEST = 3
+    ARP_REPLY = 4
 
 
 class Frame:

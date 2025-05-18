@@ -1,0 +1,20 @@
+2025-05-17 16:57:27,583 - INFO - Device d1 created with MAC a6:71:c9:74:89:7f
+2025-05-17 16:58:42,598 - ERROR - Cannot send message: No connections available
+2025-05-17 16:58:59,759 - ERROR - Cannot send message: No connections available
+2025-05-17 16:59:28,836 - INFO - Connected to link l1
+2025-05-17 17:00:16,252 - INFO - Sending message: hi
+2025-05-17 17:00:16,252 - INFO - Sending Frame[DATA:0] a6:71:...-->38:c9:...: __SIZE__2
+2025-05-17 17:00:16,337 - INFO - Received valid frame
+2025-05-17 17:00:16,337 - INFO - Received ACK 1 (frames up to 0 acknowledged)
+2025-05-17 17:00:16,390 - INFO - Sending Frame[DATA:1] a6:71:...-->38:c9:...: h
+2025-05-17 17:00:16,632 - INFO - Received valid frame
+2025-05-17 17:00:16,632 - INFO - Received ACK 2 (frames up to 1 acknowledged)
+2025-05-17 17:00:16,685 - INFO - Sending Frame[DATA:2] a6:71:...-->38:c9:...: i
+2025-05-17 17:00:16,932 - INFO - Received valid frame
+2025-05-17 17:00:16,932 - INFO - Received ACK 3 (frames up to 2 acknowledged)
+2025-05-18 11:56:05,127 - INFO - Device d1 created with MAC 8a:ea:5e:5f:48:82
+2025-05-18 12:00:19,639 - INFO - Assigned IP address 192.0.0.1/255.0.0.0 to d1
+2025-05-18 12:01:48,404 - INFO - d1 created packet: Packet(src=192.0.0.1, dest=hii, ttl=64, proto=0, data='192.0.0.2')
+2025-05-18 12:01:48,404 - ERROR - d1 cannot send packet to hii: No default gateway configured for remote networks.
+2025-05-18 12:01:57,053 - INFO - d1 created packet: Packet(src=192.0.0.1, dest=hii, ttl=64, proto=0, data='d2')
+2025-05-18 12:01:57,053 - ERROR - d1 cannot send packet to hii: No default gateway configured for remote networks.

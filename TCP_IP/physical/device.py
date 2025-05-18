@@ -9,6 +9,8 @@ from TCP_IP.utils.logging_config import setup_logger
 from TCP_IP.datalink.mac_address import MACAddress
 from TCP_IP.datalink.frame import Frame, FrameType
 from TCP_IP.config import TRANSMISSION_DELAY, BIT_ERROR_RATE
+from TCP_IP.network.ip_address import IPAddress
+from TCP_IP.network.packet import Packet
 
 class Device:
     """Base class for all network devices."""
@@ -21,14 +23,21 @@ class Device:
         self.logger = setup_logger(f"{self.name}", f"{self.name}")
         self.logger.info(f"Device {self.name} created with MAC {self.mac_address}")
         
+        # Network Layer properties
+        self.ip_address = None # Add IP address attribute
+        self.arp_table = {} # IP Address (str) -> MAC Address (str)
+        
         # Data Link Layer properties
         self.next_sequence_number = 0
         self.expected_sequence_number = 0
         self.window_size = 4  # Window size for sliding window protocol
         self.timeout = 1.0  # Timeout in seconds for retransmission
         self.unacknowledged_frames = {}  # sequence_number -> (frame, timestamp)
-        self.buffer = []  # Buffer for received out-of-order frames
+        self.buffer = {}  # Buffer for received out-of-order frames per source MAC
         self.use_go_back_n = False  # Default to Stop-and-Wait
+        
+        # Add default gateway attribute
+        self.default_gateway = None
     
     def connect(self, link):
         """Connect this device to a link."""
@@ -291,7 +300,7 @@ class Device:
                             
                             if frame.sequence_number > self.expected_sequence_number:
                                 # Buffer the frame for later processing
-                                self.buffer.append(frame)
+                                self.buffer[frame.source_mac].append(frame)
                                 self.logger.info(f"Buffered frame {frame.sequence_number}")
                             
                             # Send ACK for the next expected frame (duplicate ACK)
@@ -364,14 +373,15 @@ class Device:
     def _process_buffer(self):
         """Process buffered frames that are now in order"""
         # Sort buffer by sequence number
-        self.buffer.sort(key=lambda f: f.sequence_number)
-        
-        # Process frames that are now in order
-        while self.buffer and self.buffer[0].sequence_number == self.expected_sequence_number:
-            frame = self.buffer.pop(0)
-            self.logger.info(f"Processing buffered frame {frame.sequence_number}")
-            self.received_messages.append((frame.data, str(frame.source_mac)))
-            self.expected_sequence_number += 1
+        for source_mac, frames in self.buffer.items():
+            frames.sort(key=lambda f: f.sequence_number)
+            
+            # Process frames that are now in order
+            while frames and frames[0].sequence_number == self.expected_sequence_number:
+                frame = frames.pop(0)
+                self.logger.info(f"Processing buffered frame {frame.sequence_number}")
+                self.received_messages.append((frame.data, str(source_mac)))
+                self.expected_sequence_number += 1
     
     def _buffer_character(self, char, source_mac, sequence_number):
         """Buffer a character from a received frame"""
@@ -419,5 +429,241 @@ class Device:
         else:
             self.logger.warning(f"Incomplete message from {source_mac}: have {len(char_buffer)} of {total_size} characters")
     
+    def assign_ip_address(self, ip_address_str, subnet_mask_str="255.255.255.0"):
+        """Assign an IP address and subnet mask to the device."""
+        try:
+            self.ip_address = IPAddress(ip_address_str, subnet_mask_str)
+            self.logger.info(f"Assigned IP address {self.ip_address} to {self.name}")
+            return True
+        except Exception as e:
+            self.logger.error(f"Failed to assign IP address {ip_address_str}/{subnet_mask_str}: {e}")
+            return False
+
     def __str__(self):
         return f"Device({self.name}, MAC={self.mac_address})"
+
+    # New method to process received packets (Network Layer)
+    def process_packet(self, packet, source_device):
+        """Process a received network layer packet."""
+        self.logger.info(f"Received packet from {packet.source_ip} to {packet.destination_ip} on {self.name}")
+
+        # Check if the packet is for this device
+        if self.ip_address and packet.destination_ip == self.ip_address.address:
+            self.logger.info(f"Packet for me! Data: {packet.data}")
+            # Pass data up to the next layer (Transport Layer - not implemented yet)
+            self.received_messages.append((packet.data, packet.source_ip)) # Store for now
+        else:
+            self.logger.info(f"Packet not for me, needs routing.")
+            # If this is a router, forward the packet
+            if isinstance(self, Router): # Need to import Router
+                 self.forward_packet(packet, source_device) # Router's forwarding logic
+            else:
+                 self.logger.warning(f"Device {self.name} received packet not for it, but is not a router. Dropping.")
+
+    # Add default gateway attribute
+    def set_default_gateway(self, gateway_ip_str):
+        """Set the default gateway IP address."""
+        self.default_gateway = IPAddress(gateway_ip_str)
+        self.logger.info(f"Set default gateway for {self.name} to {self.default_gateway.address}")
+
+    # New method to send a packet (Network Layer initiation)
+    def send_packet(self, destination_ip_str, data, protocol=0):
+        """Create and send a network layer packet."""
+        if not self.ip_address:
+            self.logger.error(f"{self.name} cannot send packet: No IP address assigned.")
+            return False
+
+        packet = Packet(self.ip_address.address, destination_ip_str, data, protocol=protocol)
+        self.logger.info(f"{self.name} created packet: {packet}")
+
+        # Determine the next hop IP
+        next_hop_ip_str = None
+        # Check if destination is on the local network
+        try:
+            dest_ip_obj = IPAddress(destination_ip_str)
+            if self.ip_address.is_in_network(dest_ip_obj):
+                self.logger.info(f"Destination {destination_ip_str} is on local network.")
+                next_hop_ip_str = destination_ip_str
+            elif self.default_gateway:
+                self.logger.info(f"Destination {destination_ip_str} is remote, using default gateway {self.default_gateway.address}.")
+                next_hop_ip_str = self.default_gateway.address
+            else:
+                self.logger.error(f"{self.name} cannot send packet to {destination_ip_str}: No default gateway configured for remote networks.")
+                return False
+        except Exception as e:
+             self.logger.error(f"Error determining next hop for {destination_ip_str}: {e}")
+             return False
+
+
+        # Perform ARP lookup for the next hop IP
+        next_hop_mac = self.arp_lookup(next_hop_ip_str)
+
+        if next_hop_mac:
+            self.logger.info(f"Next hop IP {next_hop_ip_str} resolved to MAC {next_hop_mac}")
+            # Encapsulate the packet in a Data Link frame
+            # Source MAC is this device's MAC
+            # Destination MAC is the next hop's MAC (from ARP)
+            frame = Frame(
+                str(self.mac_address),
+                next_hop_mac,
+                packet, # The packet is the data payload
+                sequence_number=self.next_sequence_number, # Use Data Link seq number
+                frame_type=FrameType.DATA
+            )
+            self.next_sequence_number += 1 # Increment Data Link seq number
+
+            # Send the frame out all connected links (simplified for now, assumes one relevant link)
+            # In a real scenario, a device would send out the interface connected to the next hop.
+            # For this simulator, if connected to a switch/hub, it goes there.
+            if self.connections:
+                 self.logger.info(f"{self.name} sending frame out connected links.")
+                 # Need to select the correct interface/link if multiple exist
+                 # For simplicity, let's assume one connection or broadcast on all
+                 for link in self.connections:
+                     link.transmit(frame, self)
+                 return True
+            else:
+                 self.logger.error(f"{self.name} has no connections to send frame.")
+                 return False
+
+        else:
+            self.logger.warning(f"ARP lookup failed for {next_hop_ip_str}. Cannot send packet.")
+            # TODO: Queue packet and wait for ARP reply
+
+            return False
+
+
+    # Implement ARP lookup for a device (host)
+    def arp_lookup(self, target_ip_str):
+        """Lookup MAC address for target_ip_str in ARP table. If not found, initiate ARP request."""
+        if target_ip_str in self.arp_table:
+            self.logger.debug(f"ARP hit for {target_ip_str}: {self.arp_table[target_ip_str]}")
+            return self.arp_table[target_ip_str]
+        else:
+            self.logger.info(f"ARP miss for {target_ip_str}. Initiating ARP request.")
+            self.send_arp_request(target_ip_str) # Need to implement send_arp_request
+            # In a real simulator, you'd queue the packet and wait for a reply.
+            # For now, return None, the sending logic handles the drop/queue.
+            return None
+
+    # Implement ARP request handling for a device (host)
+    def handle_arp_request(self, frame, receiving_link):
+        """Handle incoming ARP request."""
+        # Assuming ARP request data format is "ARP_REQUEST:<sender_ip>:<sender_mac>:<target_ip>"
+        try:
+            parts = frame.data.split(':')
+            if len(parts) == 4 and parts[0] == "ARP_REQUEST":
+                sender_ip = parts[1]
+                sender_mac = parts[2]
+                target_ip = parts[3]
+
+                self.logger.info(f"{self.name} received ARP request for {target_ip} from {sender_ip} ({sender_mac})")
+
+                # Add sender to ARP table
+                self.arp_table[sender_ip] = sender_mac
+                self.logger.debug(f"Added {sender_ip} -> {sender_mac} to ARP table.")
+
+                # If the target IP is this device's IP, send a reply
+                if self.ip_address and target_ip == self.ip_address.address:
+                    self.logger.info(f"ARP request is for me! Sending ARP reply to {sender_ip}")
+                    self.send_arp_reply(sender_ip, sender_mac, frame.source_mac, receiving_link) # Need to implement send_arp_reply
+            else:
+                self.logger.warning(f"Received malformed ARP request frame data: {frame.data}")
+        except Exception as e:
+            self.logger.error(f"Error processing ARP request: {e}")
+
+
+    # Implement ARP reply handling for a device (host)
+    def handle_arp_reply(self, frame, receiving_link):
+        """Handle incoming ARP reply."""
+        # Assuming ARP reply data format is "ARP_REPLY:<sender_ip>:<sender_mac>:<target_ip>"
+        try:
+            parts = frame.data.split(':')
+            if len(parts) == 4 and parts[0] == "ARP_REPLY":
+                sender_ip = parts[1]
+                sender_mac = parts[2]
+                target_ip = parts[3] # This should be our IP
+
+                self.logger.info(f"{self.name} received ARP reply from {sender_ip} ({sender_mac})")
+
+                # Add sender to ARP table
+                self.arp_table[sender_ip] = sender_mac
+                self.logger.debug(f"Added {sender_ip} -> {sender_mac} to ARP table.")
+
+                # Check if there are queued packets for this IP and send them
+                if sender_ip in self.arp_queue:
+                    self.logger.info(f"Sending {len(self.arp_queue[sender_ip])} queued packets for {sender_ip}")
+                    queued_packets = self.arp_queue.pop(sender_ip) # Get and remove the queue
+                    for packet in queued_packets:
+                        # Now that we have the MAC, send the packet
+                        next_hop_mac = self.arp_table.get(sender_ip) # Get the newly learned MAC
+                        if next_hop_mac:
+                             # Encapsulate the packet in a Data Link frame
+                             # Source MAC is this device's MAC
+                             # Destination MAC is the next hop's MAC (from ARP)
+                             frame_to_send = Frame(
+                                 str(self.mac_address),
+                                 next_hop_mac,
+                                 packet, # The packet is the data payload
+                                 sequence_number=self.next_sequence_number, # Use Data Link seq number
+                                 frame_type=FrameType.DATA
+                             )
+                             self.next_sequence_number += 1 # Increment Data Link seq number
+
+                             # Send the frame out the appropriate link
+                             # This is simplified - ideally, you'd send out the link connected to the next hop.
+                             # For now, sending out the link where the ARP reply was received is a reasonable proxy.
+                             self.logger.info(f"{self.name} sending queued packet for {sender_ip} out {receiving_link.name}")
+                             receiving_link.transmit(frame_to_send, self)
+                        else:
+                             self.logger.error(f"ARP entry for {sender_ip} disappeared after receiving reply. Cannot send queued packet.")
+
+
+            else:
+                self.logger.warning(f"Received malformed ARP reply frame data: {frame.data}")
+        except Exception as e:
+            self.logger.error(f"Error processing ARP reply: {e}")
+
+
+    # Implement sending ARP request for a device (host)
+    def send_arp_request(self, target_ip_str):
+        """Send an ARP request for target_ip_str."""
+        if not self.ip_address:
+            self.logger.error(f"{self.name} cannot send ARP request: No IP address assigned.")
+            return
+
+        # ARP request is broadcast at the Data Link layer
+        arp_frame_data = f"ARP_REQUEST:{self.ip_address.address}:{self.mac_address}:{target_ip_str}"
+        arp_frame = Frame(
+            str(self.mac_address),
+            "FF:FF:FF:FF:FF:FF", # Broadcast MAC address
+            arp_frame_data,
+            sequence_number=0, # ARP frames don't need sequence numbers for this sim
+            frame_type=FrameType.ARP_REQUEST
+        )
+
+        self.logger.info(f"{self.name} sending ARP request for {target_ip_str}")
+        # Send out all connected links (assuming they are on the same broadcast domain)
+        for link in self.connections:
+            link.transmit(arp_frame, self)
+
+    # Implement sending ARP reply for a device (host)
+    def send_arp_reply(self, target_ip_str, target_mac_str, destination_mac_str, source_link):
+        """Send an ARP reply to target_ip_str (who sent the request)."""
+        if not self.ip_address:
+            self.logger.error(f"{self.name} cannot send ARP reply: No IP address assigned.")
+            return
+
+        # ARP reply is unicast to the requester's MAC address
+        arp_frame_data = f"ARP_REPLY:{self.ip_address.address}:{self.mac_address}:{target_ip_str}"
+        arp_frame = Frame(
+            str(self.mac_address),
+            destination_mac_str, # Send directly back to the requester's MAC
+            arp_frame_data,
+            sequence_number=0,
+            frame_type=FrameType.ARP_REPLY
+        )
+
+        self.logger.info(f"{self.name} sending ARP reply to {target_ip_str} ({destination_mac_str})")
+        # Send out the link where the request was received
+        source_link.transmit(arp_frame, self)
