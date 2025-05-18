@@ -244,3 +244,179 @@ class Router(Device):
 
     def __str__(self):
         return f"Router({self.name}, MAC={self.mac_address})"
+
+    # New method to process received packets (Network Layer)
+    def process_packet(self, packet, source_interface):
+        """Process a received network layer packet."""
+        self.logger.info(f"Router {self.name} received packet from {packet.source_ip} to {packet.destination_ip} on {source_interface.name}")
+
+        # Check if the packet is for this router (any of its interface IPs or multicast/broadcast)
+        is_for_me = False
+        if self.ip_address and packet.destination_ip == self.ip_address.address:
+             is_for_me = True
+        else:
+             # Check if destination is one of the router's interface IPs
+             for interface in self.interfaces:
+                 if packet.destination_ip == interface.ip_address.address:
+                     is_for_me = True
+                     break
+             # Check for multicast/broadcast relevant to the router (e.g., RIP multicast)
+             # This is a simplification; proper multicast handling is complex.
+             # For RIPv2, check for 224.0.0.9
+             if packet.destination_ip == "224.0.0.9":
+                 is_for_me = True
+
+
+        if is_for_me:
+            self.logger.info(f"Packet for me! Protocol: {packet.protocol}, Data: {packet.data}")
+            # Pass data up to the next layer (Transport Layer - not implemented yet)
+            # For now, handle specific protocols like RIP
+            if packet.protocol == 17: # Assuming 17 is UDP, and this is a RIP packet
+                 self.handle_rip_packet(packet, source_interface)
+            else:
+                 # Handle other protocols or pass up
+                 self.received_messages.append((packet.data, packet.source_ip)) # Store for now
+
+        else:
+            self.logger.info(f"Packet not for me, needs routing.")
+            # Forward the packet
+            self.forward_packet(packet, source_interface) # Router's forwarding logic
+
+    # Placeholder for handling RIP packets
+    def handle_rip_packet(self, packet, receiving_interface):
+        """Handle incoming RIP packet (UDP payload)."""
+        if not self.rip_enabled:
+            self.logger.debug(f"Received RIP packet on {self.name}, but RIP is disabled.")
+            return
+
+        # Assuming packet.data is the RIP message structure (e.g., a dictionary)
+        rip_message = packet.data
+        sender_ip = packet.source_ip
+
+        if not isinstance(rip_message, dict) or 'command' not in rip_message or 'entries' not in rip_message:
+            self.logger.warning(f"Received malformed RIP message from {sender_ip}")
+            return
+
+        command = rip_message['command']
+        entries = rip_message['entries']
+
+        self.logger.info(f"Received RIP {command} from {sender_ip} on {receiving_interface.name} with {len(entries)} entries.")
+
+        if command == "request":
+            # Send a RIP response back to the sender (unicast)
+            self.logger.info(f"Responding to RIP request from {sender_ip}")
+            self._send_rip_response_to_neighbor(sender_ip, receiving_interface)
+
+        elif command == "response":
+            # Process the received RIP routes
+            self._process_rip_response(sender_ip, receiving_interface, entries)
+
+        else:
+            self.logger.warning(f"Received unknown RIP command '{command}' from {sender_ip}")
+
+
+    # Helper to send a unicast RIP response to a specific neighbor
+    def _send_rip_response_to_neighbor(self, neighbor_ip_str, output_interface):
+        """Send a RIP response containing our routes to a specific neighbor."""
+        rip_response_data = []
+        for dest_network, (output_int, next_hop, metric, source) in self.routing_table.items():
+            # Implement Split Horizon: Don't advertise routes learned via this interface back out this interface
+            # Or implement Poisoned Reverse: Advertise with metric 16
+            if source == "RIP" and output_int == output_interface:
+                # Simple Split Horizon: Don't include this route
+                continue
+            else:
+                # Add route to the update (increment metric by 1 for neighbors)
+                # Ensure metric doesn't exceed infinity
+                advertised_metric = min(metric + 1, self.RIP_METRIC_INFINITY)
+                rip_response_data.append({"network": str(dest_network), "metric": advertised_metric})
+
+        if rip_response_data:
+            rip_packet_data = {"command": "response", "entries": rip_response_data}
+
+            # Send as an IP packet (unicast)
+            self.send_packet(
+                destination_ip_str=neighbor_ip_str,
+                data=rip_packet_data,
+                protocol=17, # UDP protocol number
+                source_interface=output_interface # Need to modify send_packet
+            )
+
+
+    # Helper to process incoming RIP response entries
+    def _process_rip_response(self, neighbor_ip_str, receiving_interface, entries):
+        """Process RIP route entries received from a neighbor."""
+        neighbor_ip = IPAddress(neighbor_ip_str)
+
+        for entry in entries:
+            try:
+                dest_cidr = entry.get("network")
+                metric = entry.get("metric")
+
+                if dest_cidr is None or metric is None:
+                    self.logger.warning(f"Malformed RIP entry received from {neighbor_ip_str}: {entry}")
+                    continue
+
+                dest_network = ipaddress.ip_network(dest_cidr, strict=False)
+                received_metric = int(metric)
+
+                # Ignore routes with metric 16 (unreachable) unless we need to update an existing route to 16
+                if received_metric >= self.RIP_METRIC_INFINITY:
+                    # If we have a route to this network learned from this neighbor, mark it as unreachable
+                    current_route = self.routing_table.get(dest_network)
+                    if current_route and current_route[0] == receiving_interface and current_route[3] == "RIP":
+                         self.logger.info(f"Received unreachable route for {dest_network} from {neighbor_ip_str}. Marking as unreachable.")
+                         self.routing_table[dest_network] = (receiving_interface, neighbor_ip, self.RIP_METRIC_INFINITY, "RIP")
+                         self.rip_route_timestamps[dest_network] = time.time() # Update timestamp
+                         # TODO: Trigger a poisoned reverse update for this route?
+
+                    continue # Don't add unreachable routes
+
+                # Calculate the metric to reach the destination via this neighbor
+                cost_via_neighbor = received_metric + 1
+
+                # Ignore if the cost is already infinity
+                if cost_via_neighbor >= self.RIP_METRIC_INFINITY:
+                    continue
+
+                # Check if we already have a route to this destination
+                current_route = self.routing_table.get(dest_network)
+
+                if current_route:
+                    current_metric = current_route[2]
+                    current_output_int = current_route[0]
+                    current_next_hop = current_route[1]
+                    current_source = current_route[3]
+
+                    # If the received route is from the neighbor that is our current next hop for this route,
+                    # update the route (even if the metric is the same or worse, unless it's infinity).
+                    # This handles updates and potential route poisoning.
+                    if current_output_int == receiving_interface and (current_next_hop is None or current_next_hop.address == neighbor_ip_str):
+                         if cost_via_neighbor != current_metric or current_source != "RIP":
+                             self.logger.info(f"Updating route to {dest_network} via {neighbor_ip_str} (learned from {receiving_interface.name}). Metric: {current_metric} -> {cost_via_neighbor}")
+                             self.routing_table[dest_network] = (receiving_interface, neighbor_ip, cost_via_neighbor, "RIP")
+                             self.rip_route_timestamps[dest_network] = time.time() # Update timestamp
+                             # TODO: Trigger an update?
+
+                    # If the received route offers a better metric
+                    elif cost_via_neighbor < current_metric:
+                        self.logger.info(f"Found better route to {dest_network} via {neighbor_ip_str} (learned from {receiving_interface.name}). Metric: {current_metric} -> {cost_via_neighbor}")
+                        self.routing_table[dest_network] = (receiving_interface, neighbor_ip, cost_via_neighbor, "RIP")
+                        self.rip_route_timestamps[dest_network] = time.time() # Update timestamp
+                        # TODO: Trigger an update?
+
+                    # If the received route has the same metric but is from a different neighbor (potential tie-breaking or equal-cost load balancing - optional)
+                    # elif cost_via_neighbor == current_metric and current_output_int != receiving_interface:
+                    #     self.logger.debug(f"Found equal cost route to {dest_network} via {neighbor_ip_str}. Current via {current_output_int.name}")
+                    #     # You could add this as an alternative path for load balancing if supported
+
+                else:
+                    # No existing route, add the new RIP route
+                    self.logger.info(f"Learned new route to {dest_network} via {neighbor_ip_str} (learned from {receiving_interface.name}). Metric: {cost_via_neighbor}")
+                    self.routing_table[dest_network] = (receiving_interface, neighbor_ip, cost_via_neighbor, "RIP")
+                    self.rip_route_timestamps[dest_network] = time.time() # Record timestamp
+                    # TODO: Trigger an update?
+
+
+            except (ipaddress.AddressValueError, ipaddress.NetmaskValueError, ValueError) as e:
+                self.logger.warning(f"Error processing RIP entry from {neighbor_ip_str}: {entry} - {e}")

@@ -24,3 +24,17 @@
 2025-05-17 16:59:36,892 - INFO - Added link: l2 connecting d2 and h1
 2025-05-17 16:59:41,684 - ERROR - A link with name 'l2' already exists
 2025-05-17 16:59:47,532 - INFO - Added link: l3 connecting d3 and h1
+2025-05-18 11:56:05,128 - INFO - Added device: d1
+2025-05-18 11:56:09,407 - INFO - Added device: d2
+2025-05-18 11:56:12,908 - INFO - Added device: d3
+2025-05-18 11:56:22,049 - INFO - Added device: d4
+2025-05-18 11:56:27,315 - INFO - Added router: r1
+2025-05-18 11:56:35,044 - ERROR - Endpoint 'r1' not found
+2025-05-18 11:56:38,292 - ERROR - Endpoint 'r1' not found
+2025-05-18 11:56:42,670 - ERROR - Endpoint 'r1' not found
+2025-05-18 11:56:56,829 - INFO - Added router: r2
+2025-05-18 11:57:24,432 - ERROR - Endpoint 'r1' not found
+2025-05-18 11:57:29,060 - ERROR - Endpoint 'r1' not found
+2025-05-18 11:57:37,387 - ERROR - Endpoint 'r1' not found
+2025-05-18 11:57:47,138 - ERROR - Endpoint 'r1' not found
+2025-05-18 11:57:53,220 - ERROR - Endpoint 'r2' not found

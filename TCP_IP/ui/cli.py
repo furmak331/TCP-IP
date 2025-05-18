@@ -4,6 +4,9 @@ Command-line interface for the TCP/IP Network Simulator.
 
 import time
 import threading
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 from TCP_IP.network import Network
 from TCP_IP.config import ERROR_INJECTION_RATE, CSMA_CD_SLOT_TIME, CSMA_CD_MAX_ATTEMPTS, BUSY_TIME_RANGE
 from TCP_IP.network.router import Router

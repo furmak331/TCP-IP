@@ -590,7 +590,34 @@ class Device:
                 self.arp_table[sender_ip] = sender_mac
                 self.logger.debug(f"Added {sender_ip} -> {sender_mac} to ARP table.")
 
-                # TODO: Check if there are queued packets for this IP and send them
+                # Check if there are queued packets for this IP and send them
+                if sender_ip in self.arp_queue:
+                    self.logger.info(f"Sending {len(self.arp_queue[sender_ip])} queued packets for {sender_ip}")
+                    queued_packets = self.arp_queue.pop(sender_ip) # Get and remove the queue
+                    for packet in queued_packets:
+                        # Now that we have the MAC, send the packet
+                        next_hop_mac = self.arp_table.get(sender_ip) # Get the newly learned MAC
+                        if next_hop_mac:
+                             # Encapsulate the packet in a Data Link frame
+                             # Source MAC is this device's MAC
+                             # Destination MAC is the next hop's MAC (from ARP)
+                             frame_to_send = Frame(
+                                 str(self.mac_address),
+                                 next_hop_mac,
+                                 packet, # The packet is the data payload
+                                 sequence_number=self.next_sequence_number, # Use Data Link seq number
+                                 frame_type=FrameType.DATA
+                             )
+                             self.next_sequence_number += 1 # Increment Data Link seq number
+
+                             # Send the frame out the appropriate link
+                             # This is simplified - ideally, you'd send out the link connected to the next hop.
+                             # For now, sending out the link where the ARP reply was received is a reasonable proxy.
+                             self.logger.info(f"{self.name} sending queued packet for {sender_ip} out {receiving_link.name}")
+                             receiving_link.transmit(frame_to_send, self)
+                        else:
+                             self.logger.error(f"ARP entry for {sender_ip} disappeared after receiving reply. Cannot send queued packet.")
+
 
             else:
                 self.logger.warning(f"Received malformed ARP reply frame data: {frame.data}")
